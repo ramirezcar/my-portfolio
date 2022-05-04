@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,500;1,900&family=Secular+One&family=Share+Tech+Mono&family=Viga&display=swap');
+// @import url('@/assets/base.scss');
+@import url('@/assets/variables.scss');   
+#app{
+  margin: 0 auto;
+}
+
+body{
+  color: var(--color-text);
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  // letter-spacing: -1px;
+  
+  // background: url('@/assets/img/bg-1.png');
+  background-attachment: fixed;
+  background-color:rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  // left: 0px;
+  // min-width: 100vw;
+  min-height: 100vh;
+  mix-blend-mode: revert;
+  z-index: -5;
+  // background-repeat: no-repeat;
+  margin: 0;
+  background: radial-gradient(59.48% 117.62% at 83.3% 50%, rgba(33, 176, 142, 0.126) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, 
+    linear-gradient(45.26deg, rgba(166, 166, 166, 0.2) 20.04%, rgba(91, 91, 91, 0) 119.52%), #040404;  min-height: 100vh;
+  // ::before{
+  //   opacity: 50%;
+  //   background-attachment: fixed;
+  // }
+}
+
+a{
+  text-decoration: none;
+}
+
+.avatar{
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDE4NyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8bWFzayBpZD0ibWFzazAiIG1hc2stdHlwZT0iYWxwaGEiPgogICAgICAgIDxwYXRoIGQ9Ik0xOTAuMzEyIDM2LjQ4NzlDMjA2LjU4MiA2Mi4xMTg3IDIwMS4zMDkgMTAyLjgyNiAxODIuMzI4IDEzNC4xODZDMTYzLjM0NiAxNjUuNTQ3IAogICAgICAgIDEzMC44MDcgMTg3LjU1OSAxMDAuMjI2IDE4Ni4zNTNDNjkuNjQ1NCAxODUuMjk3IDQxLjAyMjggMTYxLjAyMyAyMS43NDAzIDEyOS4zNjJDMi40NTc3NSAKICAgICAgICA5Ny44NTExIC03LjQ4NDgxIDU5LjEwMzMgNi42NzU4MSAzNC41Mjc5QzIwLjk4NzEgMTAuMTAzMiA1OS43MDI4IC0wLjE0OTEzMiA5Ny45NjY2IAogICAgICAgIDAuMDAxNjM3MzdDMTM2LjIzIDAuMzAzMTc2IDE3NC4xOTMgMTAuODU3IDE5MC4zMTIgMzYuNDg3OVoiLz4KICAgIDwvbWFzaz4KICAgIDxnIG1hc2s9InVybCgjbWFzazApIj4KICAgICAgICA8cGF0aCBkPSJNMTkwLjMxMiAzNi40ODc5QzIwNi41ODIgNjIuMTE4NyAyMDEuMzA5IDEwMi44MjYgMTgyLjMyOCAxMzQuMTg2QzE2My4zNDYgCiAgICAgICAgMTY1LjU0NyAxMzAuODA3IDE4Ny41NTkgMTAwLjIyNiAxODYuMzUzQzY5LjY0NTQgMTg1LjI5NyA0MS4wMjI4IDE2MS4wMjMgMjEuNzQwMyAKICAgICAgICAxMjkuMzYyQzIuNDU3NzUgOTcuODUxMSAtNy40ODQ4MSA1OS4xMDMzIDYuNjc1ODEgMzQuNTI3OUMyMC45ODcxIDEwLjEwMzIgNTkuNzAyOCAKICAgICAgICAtMC4xNDkxMzIgOTcuOTY2NiAwLjAwMTYzNzM3QzEzNi4yMyAwLjMwMzE3NiAxNzQuMTkzIDEwLjg1NyAxOTAuMzEyIDM2LjQ4NzlaIi8+CiAgICAgICAgPGltYWdlIGhyZWY9IiIvPgogICAgPC9nPgo8L3N2Zz4K);
+  -webkit-mask-repeat: no-repeat;
+  // width: 80%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.avatar.one img{
+  min-width: 320px;
+}
+
+a:visited{
+  text-decoration: none; 
+  decoration: none;
+}
+
+.bg-text-1{
+  position: absolute;
+  width: 26rem;
+  left: 72px;
+  top: 105px;
+  font-family: 'Secular One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11rem;
+  line-height: 83.5%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.052) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.05);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.bg-text-2{
+  position: absolute;
+  right: 3vw;
+  bottom: 51px;
+  font-family: 'Secular One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10rem;
+  line-height: 83.5%;
+  text-align: right;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0242) 0%, rgba(17, 0, 120, 0.0462) 100%), rgba(0, 0, 0, 0.03);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.border-left{
+  border-left: 4px solid var(--color-light-gray);
+  padding-left: 1em;
+}
+
+.container{
+  max-height: 7vh;
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
+
+.content {
+  min-height: 100vh;
+  width: 1080px;
+  display: flex;
+  align-items: center;
+}
+
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+h1{
+  font-family: 'Viga', sans-serif;
+  font-size: 96px;
+  font-weight: 900;
+  letter-spacing: -6px;
+  line-height: 90%;
+  text-transform: lowercase;
+  width: 100%;
+}
+
+.h-full{
+  height: 100%;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+  supported by Chrome, Edge, Opera and Firefox */
+  z-index: -1;
+}
+
+.opacity-50{
+  opacity: .5;
+}
+
+.primary-gradient{
+  background: linear-gradient(270.05deg, #21B08E 4.92%, #3B9FA6 96.41%);
+}
+
+.py-5{
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.row{
+  display: grid;
+}
+
+select, select:focus-visible {
+  background-color: rgba(65, 64, 64, 0.26);
+  border: 2px solid #373737;
+  color: #D1D1D1;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  height: 32px;
+  outline: none;
+  padding: 0 5px;
+  width: auto !important;
+}
+
+select:hover{
+  border: 2px solid #3b9fa6;
+  color: #3b9fa6;
+}
+
+option {
+  // background-color: #a5a4a4;
+  color: #000;
+  font-size: 1em;
+  padding: 0 15px;
+}
+
+option:before {
+  content: ">";
+  font-size: 1em;
+  display: none;
+  padding-right: 10px;
+  padding-left: 5px;
+  color: rgba(255, 255, 255, 0.384);
+}
+
+option:hover:before {
+  display: inline;
+}
+
+::selection {
+  color: white;
+  background: var(--color-light-gray);
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-light-gray{
+  color: var(--color-light-gray);
+}
+
+.text-gray{
+  color: var(--color-gray);
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-primary{
+  color: var(--color-primary);
+}
+
+.text-primary-gradient{
+  background: linear-gradient(270.05deg, #21B08E 4.92%, #3B9FA6 96.41%);
+  background-clip: text;
+  color: var(--color-primary);
+  font-weight: normal;
+  -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+
+.w-100{
+  width: 100%;
+}

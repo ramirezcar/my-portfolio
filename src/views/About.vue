@@ -1,0 +1,142 @@
+<template>
+  <div class="container content">
+    <Animation aos-animation="fade-up" duration="2500" delay="400">
+      <div class="row">
+
+      <div class="my-photos">
+        <div class="avatar one">
+          <img src="https://media-exp1.licdn.com/dms/image/C4E03AQH1o64S2i-h-g/profile-displayphoto-shrink_800_800/0/1638293330730?e=1655337600&amp;v=beta&amp;t=EtQxQQchLytVcMKNbl8AvMXyQ3p_EQR6Un5qLeiyCz0" alt="" data-v-4cebd208="">
+        </div>
+      </div>
+      
+      <div class="my-info">
+        <h1 class="text-primary-gradient">{{t('about-me')}}</h1>
+        <div class="py-5">
+          <p v-html="t('description')"></p>
+          <h4 class="text-primary" v-html="t('attributes.title')"></h4>
+          <p v-html="t('attributes.paragraph')">
+          </p>
+          <h4 class='text-primary'>{{t('music.title')}}</h4>
+          <p>{{t('music.paragraph')}}</p>
+        </div>
+        <div class="button-group">
+          <Button class="primary" :href="linksJson.music.youtube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+            </svg>
+            YouTube 
+          </Button>
+          <Button class="secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+            </svg>
+            Spotify
+          </Button>
+        </div>
+      </div>
+      </div>
+    </Animation>
+  </div>
+</template>
+
+<script setup>
+  import linksJson from "../resources/links.json";
+  import Button from '../components/Button.vue';
+  import { useI18n } from 'vue-i18n'
+  import Animation from "../components/utils/Animation.vue";
+  const { t } = useI18n();
+</script>
+
+<style scoped>
+  @import '@/assets/variables.scss';
+
+  .avatar{
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDE4NyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8bWFzayBpZD0ibWFzazAiIG1hc2stdHlwZT0iYWxwaGEiPgogICAgICAgIDxwYXRoIGQ9Ik0xOTAuMzEyIDM2LjQ4NzlDMjA2LjU4MiA2Mi4xMTg3IDIwMS4zMDkgMTAyLjgyNiAxODIuMzI4IDEzNC4xODZDMTYzLjM0NiAxNjUuNTQ3IAogICAgICAgIDEzMC44MDcgMTg3LjU1OSAxMDAuMjI2IDE4Ni4zNTNDNjkuNjQ1NCAxODUuMjk3IDQxLjAyMjggMTYxLjAyMyAyMS43NDAzIDEyOS4zNjJDMi40NTc3NSAKICAgICAgICA5Ny44NTExIC03LjQ4NDgxIDU5LjEwMzMgNi42NzU4MSAzNC41Mjc5QzIwLjk4NzEgMTAuMTAzMiA1OS43MDI4IC0wLjE0OTEzMiA5Ny45NjY2IAogICAgICAgIDAuMDAxNjM3MzdDMTM2LjIzIDAuMzAzMTc2IDE3NC4xOTMgMTAuODU3IDE5MC4zMTIgMzYuNDg3OVoiLz4KICAgIDwvbWFzaz4KICAgIDxnIG1hc2s9InVybCgjbWFzazApIj4KICAgICAgICA8cGF0aCBkPSJNMTkwLjMxMiAzNi40ODc5QzIwNi41ODIgNjIuMTE4NyAyMDEuMzA5IDEwMi44MjYgMTgyLjMyOCAxMzQuMTg2QzE2My4zNDYgCiAgICAgICAgMTY1LjU0NyAxMzAuODA3IDE4Ny41NTkgMTAwLjIyNiAxODYuMzUzQzY5LjY0NTQgMTg1LjI5NyA0MS4wMjI4IDE2MS4wMjMgMjEuNzQwMyAKICAgICAgICAxMjkuMzYyQzIuNDU3NzUgOTcuODUxMSAtNy40ODQ4MSA1OS4xMDMzIDYuNjc1ODEgMzQuNTI3OUMyMC45ODcxIDEwLjEwMzIgNTkuNzAyOCAKICAgICAgICAtMC4xNDkxMzIgOTcuOTY2NiAwLjAwMTYzNzM3QzEzNi4yMyAwLjMwMzE3NiAxNzQuMTkzIDEwLjg1NyAxOTAuMzEyIDM2LjQ4NzlaIi8+CiAgICAgICAgPGltYWdlIGhyZWY9IiIvPgogICAgPC9nPgo8L3N2Zz4K");
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  .button-group{
+    display: block;
+  }
+
+  a.button + a.button{
+    margin-left: 1em;
+  }
+
+
+  h5{
+    color: var(--color-light-gray);
+    font-weight: 500;
+    font-size: 1.3ch;
+    padding-bottom: 2em;
+    text-transform: uppercase;
+  }
+
+  h1{
+    text-align: right;
+  }
+
+  h1, h2, h3, h4, h5{
+    margin: .5ch 0;
+  }
+
+  h4{
+    text-transform: uppercase;
+  }
+
+  p{
+    /* color: #555555; */
+    margin-top: .5em;
+    margin-bottom: 2em;
+  }
+
+  .my-info{
+    display: block;
+    width: 65%;
+  }
+
+  .my-photos{
+    width: 35%;
+    margin-right: 3em;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .row{
+    display: flex;
+  }
+</style>
+
+<i18n>
+{
+  "es": {
+    "about-me": "Sobre mí",
+    "attributes": {
+      "title": "Mis atributos",
+      "paragraph": "Me considero un <b>autodidacta</b>, lo que no sé, lo estudio y lo indago. Ambicioso, siempre aprendiendo y buscándome un lugar. <br /><br />
+      Competitivo sanamente y partidario de las <b>buenas practicas</b> laborales. Compartir buenos <b>valores</b> de forma individual y colectiva es imprescindible para superarnos  como personas y profesionales."
+    },
+    "description": "Del sur de Chile, desde pequeño un apasionado por la tecnología, la <b>música</b> y el arte en general.",
+    "my-attrs": "About Me",
+    "music": {
+      "title": "La música 🎹",
+      "paragraph": "En el pasado también he hecho algo de música. Una de mis mayores pasiones en la vida.",
+      "listen": "Escucha mi música en: "
+      },
+  },
+  "en": {
+    "about-me": "About Me",
+    "attributes": {
+      "title": "My Attributes",
+      "paragraph": "I consider myself a <b>self-taught</b>, what I don't know, I study and investigate. Ambitious, always learning and looking for a place. <br /><br />
+       Healthy competitive and supporter of <b>good labor practices</b>. Sharing good <b>values</b> individually and collectively is essential to improve ourselves as people and professionals."
+    },
+    "description": "From the south of Chile, since he was little he has been passionate about technology, <b>music</b> and art in general.",
+    "music": {
+      "title": "Music 🎹",
+      "paragraph": "In the past I have also made some music. One of my biggest passions in life.",
+      "listen": "Listen my music on: "
+      },
+  }
+}
+</i18n>

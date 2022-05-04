@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Javascript",
+    "description": "Manejo de spreads, DRY, entre otras skills de ES22."
+  },
+  {
+    "name": "ReactJS",
+    "description": "States, Contexts, construcción y manejo de Components con sus props."
+  },
+  {
+    "name":"VueJS",
+    "description": "States, Contexts, construcción y manejo de Components con sus props."
+  },
+  {
+    "name": "Tailwind CSS",
+    "description": "Mi framwork de CSS de preferencia."
+  },
+  {
+    "name": "Bootstrap CSS",
+    "description": "Bootstrap y react-bootstrap"
+  }
+]
