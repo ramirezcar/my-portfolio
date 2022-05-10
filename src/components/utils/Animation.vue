@@ -11,7 +11,7 @@
   import { onMounted } from "vue";
   import AOS from "aos";
   const props = defineProps(['aos-animation', 'duration', 'delay'])
-  console.log(props);
+  
   onMounted(() => {
       AOS.init();
   })

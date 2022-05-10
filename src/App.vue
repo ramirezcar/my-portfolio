@@ -1,24 +1,60 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import NavBar from '@/components/layouts/NavBar.vue'
-import Home from '@/views/Home.vue'
-import '@/assets/base.scss'
-import About from './views/About.vue';
-import Skills from './views/Skills.vue';
-import Animation from './components/utils/Animation.vue';
-import Footer from './components/Footer.vue';
+  import '@/assets/base.scss'
+
+  import NavBar from '@/components/layouts/NavBar.vue'
+  import Home from '@/views/Home.vue'
+  import About from './views/About.vue';
+  import Skills from './views/Skills.vue';
+  import Animation from './components/utils/Animation.vue';
+  import Footer from './components/Footer.vue';
+
+  import { ref, onMounted } from 'vue'
+
+  const home = ref(null)
+  const skills = ref(null)
+  const about = ref(null)
+
+  const sections = ref([home, skills, about]);
+  const activeNav = ref(null)
+
+  onMounted(() => {
+    window.addEventListener("scroll", () => {
+      let current = '';
+      sections.value.forEach(section => {
+        const target = section.value;
+        const sectionTop = target.offsetTop;
+        const sectionHeight = target.offsetHeight;
+        if (scrollY >= sectionTop - sectionHeight / 3) {
+          current = target.getAttribute('id');
+          if (activeNav.value !== current) {
+            activeNav.value = current;
+          }
+          
+        }
+      });
+    })
+  });
 </script>
 
 <template>
   <!-- <div class="bg-1"> -->
-
-    <NavBar />
-    <Animation aos-animation="fade-right" duration="1500">
-      <Home id="home"/>
-    </Animation>
-    <Skills id="skills" v-bind:style="{marginTop: '8rem'}"/>
-    <About id="about"/>
-    <Footer />
+    <NavBar v-bind:active-nav="activeNav">
+      <div id="home" ref="home">
+        <Animation aos-animation="fade-right" duration="1500" data-aos-once="true">
+          <Home id="home"/>
+        </Animation>
+      </div>
+      <div id="skills" ref="skills">
+        <Skills 
+          id="skills" 
+          v-bind:style="{marginTop: '0rem'}"
+        />
+      </div>
+      <div id="about" ref="about">
+        <About id="about"/>
+      </div>
+      <Footer />
+    </NavBar>
   <!-- </div> -->
 </template>
 

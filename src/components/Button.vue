@@ -6,7 +6,6 @@
 
 <script setup>
   const props = defineProps(['class', 'href'])
-  console.log('props', props)
 </script>
 
 <style lang="scss">
@@ -45,7 +44,7 @@
     cursor: pointer;
     display: inline-flex;
     font-family: 'Viga', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     padding: .8em 4em;
     // text-transform:;

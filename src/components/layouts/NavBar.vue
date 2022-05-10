@@ -1,25 +1,3 @@
-
-<script setup>
-  import { useI18n } from 'vue-i18n'
-  import BaseLocaleSwitcher from './languageInput/BaseLocaleSwitcher.vue'
-  import { ref, onMounted } from 'vue'
-
-  const { t } = useI18n();
-
-  const scrollPosition = ref(0);
-  const scrolledNav = ref(null);
-
-  const handlerScroll = () => {
-    scrollPosition.value =  window.scrollY;
-    scrolledNav.value = scrollPosition.value > 150;
-  }
-
-  onMounted(() => {
-    window.addEventListener('scroll', handlerScroll)
-  })
-
-</script>
-
 <template>
   <nav class="navbar" :class="{scrolledNav: scrolledNav}">
     <div class="nav-brand">
@@ -29,21 +7,57 @@
       </router-link>
     </div>
     <div class="nav-links">
-      <!-- <router-link class="nav-item" to="/">{{ t('home') }}</router-link>
-      <router-link class="nav-item" to="/">{{ t('skills') }}</router-link>
-      <router-link class="nav-item" to="/">{{ t('experience') }}</router-link> -->
-      <a class="nav-item" href="#home">{{ t('home') }}</a>
-      <a class="nav-item" href="#skills">{{ t('skills') }}</a>
-      <a class="nav-item" href="#projects">{{ t('projects') }}</a>
-      <a class="nav-item" href="#about">{{ t('about') }}</a>
-      <!-- <router-link class="nav-item" to="/about">{{ t('about_me') }}</router-link> -->
-      <a class="nav-item active" href="#">{{ t('contact') }}</a>
+      <!-- <scrollactive ref="scrollactive" class="my-nav" active-class="active"> -->
+        <!-- <router-link class="nav-item" to="/">{{ t('home') }}</router-link> -->
+        <a class="nav-item home active" ref="home" href="#home">{{ t('home') }}</a>
+        <a class="nav-item skills" ref="skills" href="#skills">{{ t('skills') }}</a>
+        <a class="nav-item projects" ref="projects" href="#projects" aria-disabled="true" role="link" >{{ t('projects') }}</a>
+        <a class="nav-item about" ref="about" href="#about">{{ t('about') }}</a>
+        <a class="nav-item " ref="" href="#" aria-disabled="true" role="link" >{{ t('contact') }}</a>
+      <!-- </scrollactive> -->
       <span class="nav-item">
         <BaseLocaleSwitcher />
       </span>
     </div>
   </nav>
+  <slot></slot>
 </template>
+
+<script setup>
+  import BaseLocaleSwitcher from './languageInput/BaseLocaleSwitcher.vue'
+  import { useI18n } from 'vue-i18n'
+  import { ref, onMounted } from 'vue'
+
+  const home = ref(null)
+  const skills = ref(null)
+  const about = ref(null)
+
+  const navItems = ref([home, skills, about]);
+
+  const { t } = useI18n();
+  const props = defineProps(['active-nav'])
+
+  const scrollPosition = ref(0);
+  const scrolledNav = ref(null);
+
+  const handleScroll = () => {
+    scrollPosition.value =  window.scrollY;
+    scrolledNav.value = scrollPosition.value > 150;
+    
+    navItems.value.forEach(({value}) => {
+      value.classList.remove("active");
+      if (value.classList.contains(props.activeNav)) {
+        value.classList.add("active");
+      }
+    });
+
+  }
+
+  onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+  })
+
+</script>
 
 <style lang="scss">
   nav.navbar{
@@ -59,7 +73,7 @@
     z-index: 1;
   }
 
-  nav a:hover{
+  nav a:hover, a.active{
     &::before{
       content: "";
       background: linear-gradient(90deg, #3B9FA6 0%, #21B08E 100%);
@@ -81,47 +95,22 @@
   }
 
   .nav-brand{
-    font-size: 20px;
+    font-size: 1.2rem;
+    a{
+      margin-left: .2em !important;
+    }
     img{
       width: 36px;
       border: 3px solid var(--color-black);
       border-radius: 50px;
-      // margin-right: -24px;
-      // margin-left: 40px;
       z-index: 1;
     }
-  }
-
-  // .nav-brand a:before{
-  //   content: '<';
-  //   opacity: 0;
-  //   transition: .5s;
-  // }
-  // .nav-brand a:after{
-  //   content: '>';
-  //   opacity: 0;
-  //   transition: .5s;
-  // }
-
-  .nav-brand a:hover:before, .nav-brand a:hover:after{
-    color: #bebebe;
-    opacity: 100;
-  }
-
-  .nav-brand a:hover{
-    color: #FFFFFF !important;
-  }
-
-  nav a:hover{
-    // border-bottom: 3px solid #2F2F2F;
-    // color: #ffffff !important;
-    // background-color: #848484;
   }
 
   nav a:link, a:visited{
     text-decoration: none;
     color: var(--color-text);
-    /* transition: .5s; */
+    transition: .5s;
   }
   .nav-item, .nav-brand a{
     margin: 0 1rem;

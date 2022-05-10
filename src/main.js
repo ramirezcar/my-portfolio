@@ -6,6 +6,8 @@ import 'aos/dist/aos.css'
 import App from './App.vue'
 import router from './router'
 
+import * as scrollActive from 'vue-scrollactive';
+
 function getLocale() {
   const LSLocale = localStorage.getItem("locale")
   if (LSLocale) return LSLocale
@@ -44,5 +46,6 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(i18n)
+app.use(scrollActive)
 
 app.mount('#app')

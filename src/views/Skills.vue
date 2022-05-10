@@ -1,6 +1,6 @@
 <template>
   <div class="content container">
-    <Animation aos-animation="fade-left" duration="2000" delay="300">
+    <Animation aos-animation="fade-left" duration="2000" delay="150">
       <div class="flex-between">
           <h1 class="text-primary-gradient pulse-bg">skills</h1>
           <p class="">{{t('description')}}</p>
