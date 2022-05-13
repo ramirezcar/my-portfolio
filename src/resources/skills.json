@@ -1,22 +1,55 @@
-[
-  {
+{ 
+  "es": 
+    [
+      {
+      "name": "Javascript",
+      "description": "Manejo de spreads, DRY, entre otras funciones de ES6."
+    },
+    {
+      "name": "ReactJS",
+      "description": "States, construcción y manejo de Components con sus props, consumo de APIs."
+    },
+    {
+      "name":"VueJS",
+      "description": "Refs, construcción y manejo de Components, propiedades y slots."
+    },
+    {
+      "name": "Tailwind CSS",
+      "description": "Uso en proyectos en React."
+    },
+    {
+      "name": "Bootstrap CSS",
+      "description": "Uso en proyectos con React, Vue y Ruby on Rails (vistas)."
+    },
+    {
+      "name": "Chakra UI",
+      "description": "Componentes React en proyecto de beneficios."
+    }
+  ],
+  "en": [
+    {
     "name": "Javascript",
-    "description": "Manejo de spreads, DRY, entre otras skills de ES22."
-  },
-  {
-    "name": "ReactJS",
-    "description": "States, Contexts, construcción y manejo de Components con sus props."
-  },
-  {
-    "name":"VueJS",
-    "description": "States, Contexts, construcción y manejo de Components con sus props."
-  },
-  {
-    "name": "Tailwind CSS",
-    "description": "Mi framwork de CSS de preferencia."
-  },
-  {
-    "name": "Bootstrap CSS",
-    "description": "Bootstrap y react-bootstrap"
-  }
-]
+    "description": "Handling spreads, DRY, among other ES6 features."
+    },
+    {
+      "name": "ReactJS",
+      "description": "States, construction and handling of Components with their props, consumption of APIs."
+    },
+    {
+      "name":"VueJS",
+      "description": "Refs, construction and handling of Components, properties and slots."
+    },
+    {
+      "name": "Tailwind CSS",
+      "description": "Use in React projects."
+    },
+    {
+      "name": "Bootstrap CSS",
+      "description": "Use in projects with React, Vue and Ruby on Rails (views)."
+    },
+    {
+      "name": "UI Chakra",
+      "description": "React components in benefits project."
+    }
+  ]
+}

@@ -6,11 +6,13 @@
         Carlos <span class="text-gray">Ramírez</span>
       </router-link>
     </div>
+    <!-- <h2>Y {{ activeNav }}</h2> -->
     <div class="nav-links">
       <!-- <scrollactive ref="scrollactive" class="my-nav" active-class="active"> -->
         <!-- <router-link class="nav-item" to="/">{{ t('home') }}</router-link> -->
         <a class="nav-item home active" ref="home" href="#home">{{ t('home') }}</a>
-        <a class="nav-item skills" ref="skills" href="#skills">{{ t('skills') }}</a>
+        <a class="nav-item skills" ref="skills" href="#skills" v-on:click="handleClick">{{ t('skills') }}</a>
+        <a class="nav-item experience" ref="experience" href="#experience">{{ t('experience') }}</a>
         <a class="nav-item projects" ref="projects" href="#projects" aria-disabled="true" role="link" >{{ t('projects') }}</a>
         <a class="nav-item about" ref="about" href="#about">{{ t('about') }}</a>
         <a class="nav-item " ref="" href="#" aria-disabled="true" role="link" >{{ t('contact') }}</a>
@@ -30,27 +32,46 @@
 
   const home = ref(null)
   const skills = ref(null)
+  const experience = ref(null)
   const about = ref(null)
 
-  const navItems = ref([home, skills, about]);
+  const navItems = ref([home, skills, experience, about]);
 
   const { t } = useI18n();
   const props = defineProps(['active-nav'])
 
+  const clicking = ref(false)
+
   const scrollPosition = ref(0);
   const scrolledNav = ref(null);
+
+  const handleClick = async (e) => {
+    // clicking.value = true;
+    // const itemClicked = e.target.classList[1];
+    // console.log("clic en ", itemClicked);
+    // navItems.value.map(item => {
+    //   if (item.value?.classList[1] !== item)
+    //     item.value?.classList.remove('active')
+    // });
+    // let selector = navItems.value.filter(item => {
+    //   return item.value?.classList[1] === itemClicked
+    // })[0].value;
+
+    // selector.classList.add("active");
+    // clicking.value = false;
+  }
 
   const handleScroll = () => {
     scrollPosition.value =  window.scrollY;
     scrolledNav.value = scrollPosition.value > 150;
-    
+    console.log(navItems.value);
     navItems.value.forEach(({value}) => {
-      value.classList.remove("active");
-      if (value.classList.contains(props.activeNav)) {
-        value.classList.add("active");
+      value?.classList.remove("active");
+      if (value?.classList.contains(props.activeNav)) {
+        value?.classList.add("active");
+        console.log('setted.');
       }
     });
-
   }
 
   onMounted(() => {
@@ -136,6 +157,7 @@
   "en": {
     "home": "Home",
     "skills": "Skills",
+    "experience": "Experience",
     "projects": "Projects",
     "about": "About Me",
     "contact": "Contact Me"
@@ -143,6 +165,7 @@
   "es": {
     "home": "Inicio",
     "skills": "Skills",
+    "experience": "Experiencia",
     "projects": "Proyectos",
     "about": "Sobre mí",
     "contact": "Contáctame"

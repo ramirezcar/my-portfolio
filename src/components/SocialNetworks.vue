@@ -31,6 +31,19 @@
 </template>
 
 <style lang="scss" scoped>
+  a{
+    -webkit-transition: background 0.2s, color 0.2s;
+    -moz-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
+    &:before{
+      /* -webkit-transform: scale(1); */
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      opacity: 1
+    }
+  }
+
   .social-networks{
     margin-left: 4em;
     position: absolute;
@@ -38,11 +51,20 @@
     flex-direction: column;
     justify-content: end;
     height: 94vh;
-  }
-  .social-networks svg{
-    width: 32px;
-    height: 32px;
-    margin: 12px auto;
-    fill: var(--color-primary);
+    svg{
+      display: block;
+      fill: var(--color-primary);
+      height: 32px;
+      margin: 12px auto;
+      outline: 1px solid transparent;
+      transform-style: preserve-3d;
+      transition: all 0.1s linear;
+      width: 32px;
+      &:hover {
+        filter: drop-shadow(5px 5px 12px rgba(26, 101, 80, 0.545));
+        transform: rotateY(-45deg);
+        transform: scale(1.2);
+      }
+    }
   }
 </style>

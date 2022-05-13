@@ -1,0 +1,31 @@
+{ 
+  "es": 
+    [
+      {
+        "title": "Fullstack dev",
+        "company": "Integer SPA",
+        "period": "Nov 2020 - Abril 2022",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        "title": "Fullstack dev",
+        "company": "NTT Data",
+        "period": "Abril 2022 - Hoy",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      }
+    ],
+    "en": [
+      {
+        "title": "Fullstack dev",
+        "company": "Integer SPA",
+        "period": "Nov 2020 - April 2022",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        "title": "Fullstack dev",
+        "company": "NTT Data",
+        "period": "April 2022 - Current",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      }
+    ]
+  }

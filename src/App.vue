@@ -5,6 +5,7 @@
   import Home from '@/views/Home.vue'
   import About from './views/About.vue';
   import Skills from './views/Skills.vue';
+  import Experience from './views/Experience.vue';
   import Animation from './components/utils/Animation.vue';
   import Footer from './components/Footer.vue';
 
@@ -12,10 +13,11 @@
 
   const home = ref(null)
   const skills = ref(null)
+  const experience = ref(null)
   const about = ref(null)
 
-  const sections = ref([home, skills, about]);
-  const activeNav = ref(null)
+  const sections = ref([home, skills, experience, about]);
+  const activeNav = ref('home')
 
   onMounted(() => {
     window.addEventListener("scroll", () => {
@@ -29,7 +31,6 @@
           if (activeNav.value !== current) {
             activeNav.value = current;
           }
-          
         }
       });
     })
@@ -37,49 +38,58 @@
 </script>
 
 <template>
-  <!-- <div class="bg-1"> -->
-    <NavBar v-bind:active-nav="activeNav">
-      <div id="home" ref="home">
-        <Animation aos-animation="fade-right" duration="1500" data-aos-once="true">
-          <Home id="home"/>
-        </Animation>
-      </div>
-      <div id="skills" ref="skills">
-        <Skills 
-          id="skills" 
-          v-bind:style="{marginTop: '0rem'}"
-        />
-      </div>
-      <div id="about" ref="about">
-        <About id="about"/>
-      </div>
-      <Footer />
-    </NavBar>
-  <!-- </div> -->
+  <div class="bg"></div>
+  <div class="gradient"></div>
+  <NavBar v-bind:active-nav="activeNav">
+    <div id="home" ref="home">
+      <Animation aos-animation="fade-right" duration="1500" data-aos-once="true">
+        <Home id="home"/>
+      </Animation>
+    </div>
+    <div id="skills" ref="skills">
+      <Skills 
+        id="skills" 
+        v-bind:style="{marginTop: '0rem'}"
+      />
+    </div>
+    <div id="experience" ref="experience">
+      <Experience 
+        id="experience" 
+        v-bind:style="{marginTop: '0rem'}"
+      />
+    </div>
+    <div id="about" ref="about">
+      <About id="about"/>
+    </div>
+    <Footer />
+  </NavBar>
 </template>
 
 <style lang="scss">
-  .bg-1{
-    // background: radial-gradient(59.48% 117.62% at 83.3% 50%, rgba(33, 176, 142, 0.126) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, 
-    //   linear-gradient(45.26deg, rgba(166, 166, 166, 0.2) 20.04%, rgba(91, 91, 91, 0) 119.52%), #040404;  min-height: 100vh;
-    min-width: 100%;
-    /* margin-top: -1vh; */
-    position: absolute;
-    background-repeat: no-repeat;
+  .gradient {
+    background-image: url('@/assets/img/gradient-1.png');
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    // opacity: .9;
+    min-height: 100%;
+    mix-blend-mode: revert;
+    position: fixed;
+    width: 100%;
     z-index: -2;
-    &::before{
-      // background: url('@/assets/img/bg-1.png');
-      background-position-x: center;
-      background-position-y: center;
-      background-size: cover;
-      content: '';
-      left: 0px;
-      min-width: 100vw;
-      min-height: 100vh;
-      mix-blend-mode: darken;
-      position: absolute;
-      top: 0px;
-      z-index: -5;
-    }
+  }
+  .bg{
+    background-attachment: fixed;
+    background-image: url('@/assets/img/bg-1.png');
+    background-position-x: center;
+    background-position-y: -500px;
+    background-size: cover;
+    height: 100%;
+    mix-blend-mode: darken;
+    opacity: .4;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
   }
 </style>
