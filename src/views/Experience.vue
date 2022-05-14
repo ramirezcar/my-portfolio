@@ -1,22 +1,22 @@
 <template>
-  <div class="content container">
+  <div class="container content">
     <Animation aos-animation="fade-left" duration="2000" delay="150">
-      <div class="flex-between">
-          <h1 class="text-primary-gradient pulse-bg">Experience</h1>
-          <p class="">{{ t('description') }}</p>
-          <div class="grid">
-            <div class="item focus-anim" v-for="(experience, index) in experiences[locale]">
-              <h2 class="text-primary">{{ experience.title }}</h2>
-              <div>
-                <small class="company">{{ experience.company }}</small> · 
-                <small class="period text-light-gray">{{ experience.period }}</small>
-              </div>
-              <p>{{ experience.description }}</p>
+      <div class="flex-between bordered">
+        <h1 class="text-primary-gradient pulse-bg">{{ t('experience') }}</h1>
+        <p class="">{{ t('description') }}</p>
+        <div class="grid">
+          <div class="item focus-anim" v-for="(experience, index) in experiences[locale]">
+            <h2 class="text-primary">{{ experience.title }}</h2>
+            <div>
+              <small class="company">{{ experience.company }}</small> · 
+              <small class="period text-light-gray">{{ experience.period }}</small>
             </div>
-            <div class="item soon focus-anim">
-              <p>Por descubrir...</p>
-            </div>
+            <p>{{ experience.description }}</p>
           </div>
+          <div class="item soon focus-anim text-light-gray">
+            <p>{{ t('discover') }}</p>
+          </div>
+        </div>
       </div>
     </Animation>
   </div>
@@ -70,10 +70,11 @@
   .item{
     background: linear-gradient(102.46deg, #243430 17.01%, #243430 100.78%);
     border-radius: 3px;
+    color: rgb(207, 206, 206);
     padding: 2rem;
     &:hover{
-      background: linear-gradient(102.46deg, rgba(50, 52, 48, 0.56) 17.01%, rgba(50, 60, 51, 0.56) 100.78%);
-      color: rgb(212, 212, 212);
+      background: linear-gradient(102.46deg, rgba(47, 51, 46, 0.56) 17.01%, rgba(31, 37, 31, 0.56) 100.78%);
+      color: rgb(248, 248, 248);
     }
     p{
       font-size: .9rem;
@@ -82,6 +83,7 @@
   }
 
   h1{
+    margin-top: 0;
     margin-bottom: .5rem;
   }
 
@@ -101,10 +103,13 @@
 <i18n>
   {
     "es": {
-      "description": "Algunas de las empresas en las que me he desempeñado.",
+      "experience" : "Experiencia",
+      "description": "Algunas de las empresas y proyectos en los que me he desempeñado 💼",
+      "discover": "por descubrir..."
     },
     "en": {
-      "description": "The abilities I have forged in space-time 🧑‍💻🚀"
+      "description": "The abilities I have forged in space-time 🧑‍💻🚀",
+      "discover": "to discover..."
     }
   }
 </i18n>

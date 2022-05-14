@@ -6,16 +6,18 @@
         Carlos <span class="text-gray">Ramírez</span>
       </router-link>
     </div>
-    <!-- <h2>Y {{ activeNav }}</h2> -->
     <div class="nav-links">
-      <!-- <scrollactive ref="scrollactive" class="my-nav" active-class="active"> -->
-        <!-- <router-link class="nav-item" to="/">{{ t('home') }}</router-link> -->
-        <a class="nav-item home active" ref="home" href="#home">{{ t('home') }}</a>
-        <a class="nav-item skills" ref="skills" href="#skills" v-on:click="handleClick">{{ t('skills') }}</a>
-        <a class="nav-item experience" ref="experience" href="#experience">{{ t('experience') }}</a>
-        <a class="nav-item projects" ref="projects" href="#projects" aria-disabled="true" role="link" >{{ t('projects') }}</a>
-        <a class="nav-item about" ref="about" href="#about">{{ t('about') }}</a>
-        <a class="nav-item " ref="" href="#" aria-disabled="true" role="link" >{{ t('contact') }}</a>
+        <router-link class="nav-item home" to="/">{{ t('home') }}</router-link>
+        <router-link class="nav-item experience" to="/experience" v-on:click="handleClick">{{ t('experience') }}</router-link>
+        <!-- <router-link class="nav-item skills" to="/skills">{{ t('skills') }}</router-link> -->
+        <router-link class="nav-item about" to="/about">{{ t('about') }}</router-link>
+        <router-link class="nav-item contact" to="/contact">{{ t('contact') }}</router-link>
+        <!-- <a class="nav-item home active" ref="home" v-on:click="handleClick">{{ t('home') }}</a>
+        <a class="nav-item skills" ref="skills" v-on:click="handleClick">{{ t('skills') }}</a>
+        <a class="nav-item experience" ref="experience" v-on:click="handleClick">{{ t('experience') }}</a>
+        <a class="nav-item projects" ref="projects">{{ t('projects') }}</a>
+        <a class="nav-item about" ref="about" v-on:click="handleClick">{{ t('about') }}</a>
+        <a class="nav-item contact" ref="contact">{{ t('contact') }}</a> -->
       <!-- </scrollactive> -->
       <span class="nav-item">
         <BaseLocaleSwitcher />
@@ -28,50 +30,51 @@
 <script setup>
   import BaseLocaleSwitcher from './languageInput/BaseLocaleSwitcher.vue'
   import { useI18n } from 'vue-i18n'
-  import { ref, onMounted } from 'vue'
+  import { ref, onMounted, watch } from 'vue'
+  const { t } = useI18n();
 
   const home = ref(null)
   const skills = ref(null)
   const experience = ref(null)
   const about = ref(null)
 
+  const props = defineProps(['active-nav','sections'])
   const navItems = ref([home, skills, experience, about]);
 
-  const { t } = useI18n();
-  const props = defineProps(['active-nav'])
-
-  const clicking = ref(false)
+  // const activeNavItem = ref(props.activeNav);
 
   const scrollPosition = ref(0);
   const scrolledNav = ref(null);
 
-  const handleClick = async (e) => {
-    // clicking.value = true;
-    // const itemClicked = e.target.classList[1];
-    // console.log("clic en ", itemClicked);
-    // navItems.value.map(item => {
-    //   if (item.value?.classList[1] !== item)
-    //     item.value?.classList.remove('active')
-    // });
-    // let selector = navItems.value.filter(item => {
-    //   return item.value?.classList[1] === itemClicked
-    // })[0].value;
-
-    // selector.classList.add("active");
-    // clicking.value = false;
-  }
-
   const handleScroll = () => {
     scrollPosition.value =  window.scrollY;
     scrolledNav.value = scrollPosition.value > 150;
-    console.log(navItems.value);
+    // navItems.value.forEach(({value}) => {
+    //   value?.classList.remove("active");
+    //   console.log(activeNavItem.value, value?.classList.contains(activeNavItem.value));
+    //   if (value?.classList.contains(activeNavItem.value)) {
+    //     value?.classList.add("active");
+    //   }
+    // });
+  }
+
+  // hacer que un watch escuche cuando cambie el prop desde el padre y setee la referencia
+
+  const handleClick = e => {
+    const sectionName = e.target.classList[1];
+    // let scrollYTarget = props.sections.filter(section => {
+    //   return section.value.id === sectionName
+    // })[0].value.offsetTop;
+    // window.scrollTo(0, scrollYTarget);
     navItems.value.forEach(({value}) => {
       value?.classList.remove("active");
-      if (value?.classList.contains(props.activeNav)) {
-        value?.classList.add("active");
-        console.log('setted.');
-      }
+    //   console.log(activeNavItem.value, value?.classList.contains(activeNavItem.value));
+    //   if (value?.classList.contains(activeNavItem.value)) {
+    //     value?.classList.add("active");
+    //   }
     });
+    // activeNavItem.value = sectionName;
+    console.log(e.target.classList);
   }
 
   onMounted(() => {
@@ -82,33 +85,41 @@
 
 <style lang="scss">
   nav.navbar{
-    font-family: 'Viga', sans-serif;
-    min-height: 7vh;
-    /* max-width: 1280px; */
-    width: -webkit-fill-available;
     display: flex;
-    margin: .5em 1em;
-    padding: 0 1em;
+    font-family: 'Viga', sans-serif;
+    /* max-width: 1280px; */
     justify-content: space-between;
+    margin: .5em 1em;
+    min-height: 7vh;
+    padding: 0 1em;
     position: fixed;
+    width: -webkit-fill-available;
     z-index: 1;
   }
 
-  nav a:hover, a.active{
+  nav a.nav-item:hover, a.active, a.nav-item.router-link-active{
     &::before{
-      content: "";
+      /*content: "";
       background: linear-gradient(90deg, #3B9FA6 0%, #21B08E 100%);
-      box-shadow: 0px -3px 10px #21b08e;
       border-radius: 3px;
-      width: 1.5rem;
       position: absolute;
+      border-bottom: 5px solid  linear-gradient(90deg, #3B9FA6 0%, #21B08E 100%);*/
       top: 50px;
-      border-bottom: 5px solid var(--color-primary);
+      content: "";
+      box-shadow: 0px -3px 10px #21b08e;
+      position: absolute;
+      top: 90%;
+      width: 1.5rem;
+      height: 5px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #3B9FA6 0%, #21B08E 100%);
     }
   }
 
   .nav-links{
     display: flex;
+    font-size: .9em;
+    font-weight: 200;
   }
 
   .nav-brand a, .nav-item{
@@ -116,7 +127,7 @@
   }
 
   .nav-brand{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     a{
       margin-left: .2em !important;
     }
@@ -137,6 +148,8 @@
     margin: 0 1rem;
     margin-bottom: -3px;
     padding: 6px 6px;
+    cursor: pointer;
+    position: relative;
   }
   .nav-links, .nav-brand{
     align-items: center;

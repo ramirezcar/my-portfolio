@@ -1,8 +1,8 @@
 <template>
   <div class="content container">
     <Animation aos-animation="fade-left" duration="2000" delay="150">
-      <div class="flex-between">
-          <h1 class="text-primary-gradient pulse-bg">skills</h1>
+      <div class="flex-between bordered">
+          <h1 class="text-primary-gradient pulse-bg">{{ t('skills') }}</h1>
           <p class="">{{ t('description') }}</p>
           <div class="grid">
             <div class="item focus-anim" v-for="(skill, index) in skills[locale]">
@@ -60,9 +60,10 @@
     background: linear-gradient(102.46deg, rgba(20, 31, 28, 0.56) 17.01%, rgba(20, 31, 28, 0.56) 100.78%);
     border-radius: 3px;
     padding: 2rem;
+    color: rgb(202, 202, 202);
     &:hover{
-      background: linear-gradient(102.46deg, rgba(37, 38, 34, 0.56) 17.01%, rgba(35, 42, 36, 0.56) 100.78%);
-      color: rgb(212, 212, 212);
+      background: linear-gradient(102.46deg, rgba(24, 24, 22, 0.56) 17.01%, rgba(27, 35, 28, 0.56) 100.78%);
+      color: rgb(234, 234, 234);
     }
     p{
       font-size: .9rem;
@@ -86,6 +87,7 @@
 <i18n>
   {
     "es": {
+      "skills" : "Habilidades",
       "description": "Las habilidades que he forjado en el espacio-tiempo 🧑‍💻🚀",
     },
     "en": {

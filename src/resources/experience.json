@@ -5,27 +5,27 @@
         "title": "Fullstack dev",
         "company": "Integer SPA",
         "period": "Nov 2020 - Abril 2022",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "description": "Framework Code Igniter (PHP) en torno al CRM Oracle Cloud Service (RightNow), con clientes bancarios, de retail, entre otros. Frontend JavaScript (YUI Library) en portales de clientes, HTML y CSS."
       },
       {
         "title": "Fullstack dev",
         "company": "NTT Data",
         "period": "Abril 2022 - Hoy",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Desarrollo backend de servicios REST y Graphql en NodeJS, Arquitectura en la nube (AWS) y desarrollo frontend en ReactJS."
       }
     ],
     "en": [
       {
-        "title": "Fullstack dev",
+        "title": "Fullstackdev",
         "company": "Integer SPA",
         "period": "Nov 2020 - April 2022",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "description": "Development with Code Igniter framework (PHP) around the CRM Oracle Cloud Service (RightNow), with Banking and retail clients, among others. Frontend JavaScript (YUI Library) in customer portals, HTML and CSS."
       },
       {
-        "title": "Fullstack dev",
+        "title": "Fullstackdev",
         "company": "NTT Data",
-        "period": "April 2022 - Current",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "period": "April 2022 - Today",
+        "description": "Backend development with REST and Graphql services in NodeJS, Cloud Architecture (AWS) and frontend development in ReactJS."
       }
     ]
   }
