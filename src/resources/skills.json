@@ -1,7 +1,6 @@
-{ 
-  "es": 
-    [
-      {
+{
+  "es": [
+    {
       "name": "Javascript",
       "description": "Manejo de spreads, DRY, entre otras funciones de ES6."
     },
@@ -10,7 +9,7 @@
       "description": "States, construcción y manejo de Components con sus props, consumo de APIs."
     },
     {
-      "name":"VueJS",
+      "name": "VueJS",
       "description": "Refs, construcción y manejo de Components, propiedades y slots."
     },
     {
@@ -28,15 +27,15 @@
   ],
   "en": [
     {
-    "name": "Javascript",
-    "description": "Handling spreads, DRY, among other ES6 features."
+      "name": "Javascript",
+      "description": "Handling spreads, DRY, among other ES6 features."
     },
     {
       "name": "ReactJS",
       "description": "States, construction and handling of Components with their props, consumption of APIs."
     },
     {
-      "name":"VueJS",
+      "name": "VueJS",
       "description": "Refs, construction and handling of Components, properties and slots."
     },
     {

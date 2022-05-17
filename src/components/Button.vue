@@ -1,12 +1,15 @@
+<script setup>
+  const props = defineProps({
+    class: String,
+    href: String
+  })
+</script>
+
 <template>
     <a :class="[props.class, 'button']" :href="props.href" target="_blank">
       <slot />
     </a>
 </template>
-
-<script setup>
-  const props = defineProps(['class', 'href'])
-</script>
 
 <style lang="scss">
   @import '@/assets/variables.scss';

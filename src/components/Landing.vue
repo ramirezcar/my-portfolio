@@ -6,28 +6,24 @@
 </script>
 
 <template>
-  <!-- <div class="landing-container"> -->
-    <div class="landing">
-      <Animation :style="{display: 'inline-flex'}">
-      <div :style="{marginTop: 'auto', marginBottom: 'auto', marginRight: '2em'}">
-        <h1 class="text-right">Carlos <br /><span class="text-gray">Ramirez</span></h1>
-        <h3 class="text-right text-primary-gradient">{{ t('position') }}</h3>
-      </div>
-      <div :style="{marginTop: 'auto', marginBottom: 'auto'}">
-        <lord-icon
-          src="https://cdn.lordicon.com/anihkfxp.json"
-          trigger="loop"
-          colors="primary:#505454,secondary:#25a789 "
-
-          stroke="80"
-          style="width:180px;height:180px">
-        </lord-icon>
-      </div>
-      </Animation>
+  <div class="landing">
+    <Animation :style="{display: 'inline-flex'}">
+    <div :style="{marginTop: 'auto', marginBottom: 'auto', marginRight: '2em'}">
+      <h1 class="text-right">Carlos <br /><span class="text-gray">Ramirez</span></h1>
+      <h3 class="text-right text-primary-gradient">{{ t('position') }}</h3>
     </div>
-    <!-- <div class="typing-container">
-      <Typing class="text-light-gray">Programing is freedom!</Typing>
-    </div> -->
+    <div :style="{marginTop: 'auto', marginBottom: 'auto'}">
+      <lord-icon
+        src="https://cdn.lordicon.com/anihkfxp.json"
+        trigger="loop"
+        colors="primary:#505454,secondary:#25a789 "
+
+        stroke="80"
+        style="width:180px;height:180px">
+      </lord-icon>
+    </div>
+    </Animation>
+  </div>
 </template>
 
 <style scoped>

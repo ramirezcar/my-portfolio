@@ -1,23 +1,33 @@
 <template>
   <section class="container content">
-    <Animation aos-animation="fade-down" duration="2500" delay="200">
+    <Animation
+      aos-animation="fade-down"
+      duration="2500"
+      delay="200"
+    >
       <div class="row bordered">
-
-        <div class="my-photos" style="height: 100%">
-          <img src="@/assets/img/photos.png" alt="">
+        <div
+          class="my-photos"
+          style="height: 100%"
+        >
+          <img
+            src="@/assets/img/photos.png"
+            alt=""
+          >
         </div>
         <!-- <div class="my-photos bordered">
           <div class="avatar one"> -->
-            <!-- <img src="https://media-exp1.licdn.com/dms/image/C4E03AQH1o64S2i-h-g/profile-displayphoto-shrink_800_800/0/1638293330730?e=1655337600&amp;v=beta&amp;t=EtQxQQchLytVcMKNbl8AvMXyQ3p_EQR6Un5qLeiyCz0" alt="" data-v-4cebd208=""> -->
-          <!-- </div>
+        <!-- <img src="https://media-exp1.licdn.com/dms/image/C4E03AQH1o64S2i-h-g/profile-displayphoto-shrink_800_800/0/1638293330730?e=1655337600&amp;v=beta&amp;t=EtQxQQchLytVcMKNbl8AvMXyQ3p_EQR6Un5qLeiyCz0" alt="" data-v-4cebd208=""> -->
+        <!-- </div>
         </div> -->
         
         <div class="my-info text-right ">
-          <h1 class="text-primary-gradient">{{t('about-me')}}</h1>
+          <h1 class="text-primary-gradient">
+            {{ t('about-me') }}
+          </h1>
           <div class="py-5">
-            <h2 v-html="t('description')"></h2>
-            <p v-html="t('paragraph')">
-            </p>
+            <h2 v-html="t('description')" />
+            <p v-html="t('paragraph')" />
             <!-- <h4 class='text-primary'>{{t('music.title')}}</h4>
             <p>{{t('music.paragraph')}}</p> -->
           </div>
@@ -28,9 +38,19 @@
               </svg>
               YouTube 
             </Button> -->
-            <Button class="secondary" :href="linksJson.music.spotify">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
-                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+            <Button
+              class="secondary"
+              :href="linksJson.music.spotify"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                class="bi bi-spotify"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z" />
               </svg>
               Spotify
             </Button>
@@ -42,14 +62,12 @@
 </template>
 
 <script setup>
-  import linksJson from "../resources/links.json";
-  import Button from '../components/Button.vue';
+  import linksJson from "../resources/links.json"
+  import Button from '../components/Button.vue'
+  import Animation from "@/components/utils/Animation.vue"
   import { useI18n } from 'vue-i18n'
-  import Animation from "../components/utils/Animation.vue";
-  import { defineProps } from 'vue';
 
-  const props = defineProps(['id']);
-  const { t } = useI18n();
+  const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>
@@ -140,21 +158,25 @@
       "title": "La música 🎹",
       "paragraph": "En el pasado también he hecho algo de música. Una de mis mayores pasiones en la vida.",
       "listen": "Escucha mi música en: "
-      },
+    }
   },
   "en": {
-    "about-me": "About Me",
-    "attributes": {
-      "title": "My Attributes",
-      "paragraph": "I consider myself a <b>self-taught</b>, what I don't know, I study and investigate. Ambitious, always learning and looking for a place. <br /><br />
-       Healthy competitive and supporter of <b>good labor practices</b>. Sharing good <b>values</b> individually and collectively is essential to improve ourselves as people and professionals."
-    },
-    "description": "From the south of Chile, since he was little he has been passionate about technology, <b>music</b> and art in general.",
-    "music": {
-      "title": "Music 🎹",
-      "paragraph": "In the past I have also made some music. One of my biggest passions in life.",
-      "listen": "Listen my music on: "
-      },
+    "about-me": "About me",
+     "description": "My name is <span class='text-primary'>Carlos Ramírez</span> and I am a Frontend developer",
+     "paragraph": "From the south of Chile, passionate, dedicated and always enchanted by technology, learning on my own in these 2 short but intense years of experience.
+       <br/><br/>I consider myself self-taught,
+       I don't know, I study it and investigate it. Ambitious,
+       always learning and looking for a place. supporter of the good
+       labor practices. I think sharing good
+       values individually and collectively
+       essential to overcome
+       people and professionals.",
+     "discover": "discover it yourself...",
+     "music": {
+       "title": "The music 🎹",
+       "paragraph": "I've also done some music in the past. One of my biggest passions in life.",
+       "listen": "Listen to my music on: "
+     }
   }
 }
 </i18n>

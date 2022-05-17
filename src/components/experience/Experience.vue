@@ -1,12 +1,26 @@
 <template>
   <div class="container content">
-    <Animation aos-animation="fade-left" duration="2000" delay="150">
+    <Animation
+      aos-animation="fade-left"
+      duration="2000"
+      delay="150"
+    >
       <div class="flex-between bordered">
-        <h1 class="text-primary-gradient pulse-bg">{{ t('experience') }}</h1>
-        <p class="">{{ t('description') }}</p>
+        <h1 class="text-primary-gradient pulse-bg">
+          {{ t('experience') }}
+        </h1>
+        <p class="">
+          {{ t('description') }}
+        </p>
         <div class="grid">
-          <div class="item focus-anim" v-for="(experience, index) in experiences[locale]">
-            <h2 class="text-primary">{{ experience.title }}</h2>
+          <div
+            v-for="(experience) in experiences[locale]"
+            :key="experience"
+            class="item focus-anim"
+          >
+            <h2 class="text-primary">
+              {{ experience.title }}
+            </h2>
             <div>
               <small class="company">{{ experience.company }}</small> · 
               <small class="period text-light-gray">{{ experience.period }}</small>
@@ -23,17 +37,17 @@
 </template>
 
 <script setup>
-  import experiences from "@/resources/experience";
+  import experiences from "@/resources/experience"
   import { useI18n } from 'vue-i18n'
-  import { onMounted } from "vue";
-  import AOS from "aos";
-  import Animation from "../components/utils/Animation.vue";
+  import { onMounted } from "vue"
+  import AOS from "aos"
+  import Animation from "@/components/utils/Animation.vue"
 
   const { locale } = useI18n()
-  const { t } = useI18n();
+  const { t } = useI18n()
 
   onMounted(() => {
-      AOS.init();
+    AOS.init()
   })
 </script>
 
@@ -108,6 +122,7 @@
       "discover": "por descubrir..."
     },
     "en": {
+      "experience" : "Experience",
       "description": "The abilities I have forged in space-time 🧑‍💻🚀",
       "discover": "to discover..."
     }

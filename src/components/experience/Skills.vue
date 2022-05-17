@@ -1,35 +1,49 @@
+<script setup>
+  import skills from "@/resources/skills"
+  import { useI18n } from 'vue-i18n'
+  import { onMounted } from "vue"
+  import AOS from "aos"
+  import Animation from "@/components/utils/Animation.vue"
+
+  const { locale } = useI18n()
+  const { t } = useI18n()
+
+  onMounted(() => {
+    AOS.init()
+  })
+</script>
+
 <template>
   <div class="content container">
-    <Animation aos-animation="fade-left" duration="2000" delay="150">
+    <Animation
+      aos-animation="fade-left"
+      duration="2000"
+      delay="150"
+    >
       <div class="flex-between bordered">
-          <h1 class="text-primary-gradient pulse-bg">{{ t('skills') }}</h1>
-          <p class="">{{ t('description') }}</p>
-          <div class="grid">
-            <div class="item focus-anim" v-for="(skill, index) in skills[locale]">
-              <h2 class="text-primary">{{ skill.name }}</h2>
-              <!-- <h2 class="text-primary">{{ skill.name + t('skills[0]') }}</h2> -->
-              <p>{{ skill.description }}</p>
-            </div>
+        <h1 class="text-primary-gradient pulse-bg">
+          {{ t('skills') }}
+        </h1>
+        <p class="">
+          {{ t('description') }}
+        </p>
+        <div class="grid">
+          <div
+            v-for="(skill) in skills[locale]"
+            :key="skill"
+            class="item focus-anim"
+          >
+            <h2 class="text-primary">
+              {{ skill.name }}
+            </h2>
+            <!-- <h2 class="text-primary">{{ skill.name + t('skills[0]') }}</h2> -->
+            <p>{{ skill.description }}</p>
           </div>
+        </div>
       </div>
     </Animation>
   </div>
 </template>
-
-<script setup>
-  import skills from "@/resources/skills";
-  import { useI18n } from 'vue-i18n'
-  import { onMounted } from "vue";
-  import AOS from "aos";
-  import Animation from "../components/utils/Animation.vue";
-
-  const { locale } = useI18n()
-  const { t } = useI18n();
-
-  onMounted(() => {
-      AOS.init();
-  })
-</script>
 
 <style lang="scss" scoped>
   .pulse-bg {
@@ -84,13 +98,14 @@
   }
 </style>
 
-<i18n>
+<i18n lang="json">
   {
     "es": {
       "skills" : "Habilidades",
-      "description": "Las habilidades que he forjado en el espacio-tiempo 🧑‍💻🚀",
+      "description": "Las habilidades que he forjado en el espacio-tiempo 🧑‍💻🚀"
     },
     "en": {
+      "skills" : "Skills",
       "description": "The abilities I have forged in space-time 🧑‍💻🚀"
     }
   }

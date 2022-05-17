@@ -5,10 +5,10 @@ import 'aos/dist/aos.css'
 
 import App from './App.vue'
 import router from './router'
-import * as scrollActive from 'vue-scrollactive';
+import * as scrollActive from 'vue-scrollactive'
 
 // Locale
- 
+
 function getLocale() {
   const LSLocale = localStorage.getItem("locale")
   if (LSLocale) return LSLocale
@@ -26,7 +26,7 @@ const i18n = createI18n({
   legacy: false, // you must set `false`, to use Composition API
   locale: getLocale(), // set locale
   fallbackLocale: 'es', // set fallback locale
-});
+})
 
 const app = createApp(App)
 

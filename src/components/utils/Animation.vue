@@ -1,8 +1,8 @@
 <template lang="">
   <div 
-    v-bind:data-aos="props.aosAnimation || 'fade-up'"
-    v-bind:data-aos-duration="props.duration || 2000"
-    v-bind:data-aos-delay="props.delay || 200"
+    :data-aos="props.aosAnimation || 'fade-up'"
+    :data-aos-duration="props.duration || 2000"
+    :data-aos-delay="props.delay || 200"
   >
     <slot></slot>
   </div>

@@ -1,7 +1,7 @@
 <script setup>
   const props = defineProps(['code'])
   const getImageUrl = (code) =>
-    new URL(`../../../assets/img/flags/${code}.svg`, import.meta.url).href
+    new URL(`../../assets/img/flags/${code}.svg`, import.meta.url).href
 </script>
 
 <template>

@@ -1,16 +1,16 @@
 <template lang="">
   <div>
     <Experience></Experience>
-    <a v-on:click="handleClick">
+    <a @click="handleClick">
       <DownButton></DownButton>
     </a>
     <Skills></Skills>
   </div>
 </template>
 <script setup>
-  import Skills from "./Skills.vue";
-  import Experience from "./Experience.vue";
-  import DownButton from "../components/utils/DownButton.vue";
+  import Skills from "@/components/experience/Skills.vue";
+  import Experience from "@/components/experience/Experience.vue";
+  import DownButton from "@/components/utils/DownButton.vue";
 
   const handleClick = (e) => {
     scroll({
