@@ -4,6 +4,7 @@
   import { onMounted } from "vue"
   import AOS from "aos"
   import Animation from "@/components/utils/Animation.vue"
+  import SectionHeader from "../ui/SectionHeader.vue"
 
   const { locale } = useI18n()
   const { t } = useI18n()
@@ -14,16 +15,14 @@
 </script>
 
 <template>
-  <div class="content container">
+  <section class="content container">
     <Animation
-      aos-animation="fade-left"
+      aos-animation="fade-down"
       duration="2000"
       delay="150"
     >
       <div class="flex-between bordered">
-        <h1 class="text-primary-gradient pulse-bg">
-          {{ t('skills') }}
-        </h1>
+        <SectionHeader :text="t('skills')" />
         <p class="">
           {{ t('description') }}
         </p>
@@ -42,32 +41,27 @@
         </div>
       </div>
     </Animation>
-  </div>
+  </section>
 </template>
-
 <style lang="scss" scoped>
-  .pulse-bg {
-    animation: pulse 3s infinite;
-    animation-direction:alternate;
-  }
-
-  @keyframes pulse {
-    0% {
-      color: var(--color-primary);
-    }
-    100% {
-      color: var(--color-secondary);
-    }
-  }
-
   .grid{
     display: grid;
     grid-auto-rows: 240px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row-gap:    12px;
-    grid-column-gap: 1rem;
+    grid-gap:    1rem;
     margin-top: 1.5rem;
     width: 100%;
+  }
+
+  @media (max-width: 960px){
+    .grid{
+      grid-template-columns: 1fr 1fr;
+      margin-top: 1em;
+    }
+
+    .item{
+      padding: 1.5rem;
+    }
   }
 
   .item{

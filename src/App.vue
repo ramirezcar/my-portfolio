@@ -2,7 +2,7 @@
   import '@/assets/base.scss'
 
   import NavBar from '@/components/ui/TheNavbar.vue'
-  import Footer from '@/components/Footer.vue';
+  import Footer from '@/components/Footer.vue'
 
   import { ref, onMounted } from 'vue'
 
@@ -11,23 +11,29 @@
   const experience = ref(null)
   const about = ref(null)
 
-  const sections = ref([home, skills, experience, about]);
-  const activeNav = ref('home');
+  const sections = ref([home, skills, experience, about])
+  const activeNav = ref('home')
 
   onMounted(() => {
     window.history.scrollRestoration = 'manual'
-  });
+  })
 </script>
 
 <template>
-  <div class="bg"></div>
-  <div class="gradient"></div>
-  <NavBar />
-  <RouterView />
+  <div class="bg" />
+  <div class="gradient" />
+  <div class="app">
+    <NavBar />
+    <RouterView />
+  </div>
   <Footer />
 </template>
 
 <style lang="scss" scoped>
+  .app{
+    display: block;
+    height: 100vh;
+  }
   .gradient {
     background-image: url('@/assets/img/gradient-1.png');
     background-attachment: fixed;
@@ -44,8 +50,8 @@
     background-attachment: fixed;
     background-image: url('@/assets/img/bg-1.png');
     background-position-x: center;
-    background-position-y: -500px;
-    background-size: cover;
+    background-position-y: 0;
+    background-size: auto 120%;
     height: 100%;
     mix-blend-mode: darken;
     opacity: .5;

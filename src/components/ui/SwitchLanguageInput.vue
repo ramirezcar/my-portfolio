@@ -30,8 +30,17 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
   div{
     display: flex;
+  }
+  @media (max-width: 640px) {
+    select{
+      padding: 0 1em;
+      height: 2.2rem;
+    }
+    img {
+      display: none;
+    }
   }
 </style>

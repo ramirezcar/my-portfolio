@@ -6,9 +6,13 @@
 </script>
 
 <template>
-    <a :class="[props.class, 'button']" :href="props.href" target="_blank">
-      <slot />
-    </a>
+  <a
+    :class="[props.class, 'button']"
+    :href="props.href"
+    target="_blank"
+  >
+    <slot />
+  </a>
 </template>
 
 <style lang="scss">

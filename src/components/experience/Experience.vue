@@ -1,47 +1,10 @@
-<template>
-  <div class="container content">
-    <Animation
-      aos-animation="fade-left"
-      duration="2000"
-      delay="150"
-    >
-      <div class="flex-between bordered">
-        <h1 class="text-primary-gradient pulse-bg">
-          {{ t('experience') }}
-        </h1>
-        <p class="">
-          {{ t('description') }}
-        </p>
-        <div class="grid">
-          <div
-            v-for="(experience) in experiences[locale]"
-            :key="experience"
-            class="item focus-anim"
-          >
-            <h2 class="text-primary">
-              {{ experience.title }}
-            </h2>
-            <div>
-              <small class="company">{{ experience.company }}</small> · 
-              <small class="period text-light-gray">{{ experience.period }}</small>
-            </div>
-            <p>{{ experience.description }}</p>
-          </div>
-          <div class="item soon focus-anim text-light-gray">
-            <p>{{ t('discover') }}</p>
-          </div>
-        </div>
-      </div>
-    </Animation>
-  </div>
-</template>
-
 <script setup>
   import experiences from "@/resources/experience"
   import { useI18n } from 'vue-i18n'
   import { onMounted } from "vue"
   import AOS from "aos"
   import Animation from "@/components/utils/Animation.vue"
+  import SectionHeader from "../ui/SectionHeader.vue"
 
   const { locale } = useI18n()
   const { t } = useI18n()
@@ -51,21 +14,45 @@
   })
 </script>
 
+<template>
+  <section>
+    <div class="container content">
+      <Animation
+        aos-animation="fade-left"
+        duration="2000"
+        delay="150"
+      >
+        <div class="flex-between bordered">
+          <SectionHeader :text="t('experience')" />
+          <p class="">
+            {{ t('description') }}
+          </p>
+          <div class="grid">
+            <div
+              v-for="(experience) in experiences[locale]"
+              :key="experience"
+              class="item focus-anim"
+            >
+              <h2 class="text-primary">
+                {{ experience.title }}
+              </h2>
+              <div>
+                <small class="company">{{ experience.company }}</small> · 
+                <small class="period text-light-gray">{{ experience.period }}</small>
+              </div>
+              <p>{{ experience.description }}</p>
+            </div>
+            <div class="item soon focus-anim text-light-gray">
+              <p>{{ t('discover') }}</p>
+            </div>
+          </div>
+        </div>
+      </Animation>
+    </div>
+  </section>
+</template>
+
 <style lang="scss" scoped>
-  .pulse-bg {
-    animation: pulse 3s infinite;
-    animation-direction:alternate;
-  }
-
-  @keyframes pulse {
-    0% {
-      color: var(--color-primary);
-    }
-    100% {
-      color: var(--color-secondary);
-    }
-  }
-
   .soon{
     display: flex;
     align-items: center;
@@ -73,12 +60,23 @@
 
   .grid{
     display: grid;
-    grid-auto-rows: 240px;
+    // grid-auto-rows: 10ch;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap:    12px;
     grid-column-gap: 1rem;
     margin-top: 1.5rem;
-    width: 100%;
+    // width: 100%;
+  }
+
+  @media (max-width: 960px){
+    .grid{
+      grid-template-columns: 1fr;
+      margin-top: 1em;
+    }
+
+    .item{
+      padding: 1.5rem;
+    }
   }
 
   .item{
@@ -94,11 +92,6 @@
       font-size: .9rem;
       font-weight: 500;
     }
-  }
-
-  h1{
-    margin-top: 0;
-    margin-bottom: .5rem;
   }
 
   h2{

@@ -1,24 +1,25 @@
-<template lang="">
-  <div>
-    <Experience></Experience>
-    <a @click="handleClick">
-      <DownButton></DownButton>
-    </a>
-    <Skills></Skills>
-  </div>
-</template>
-<script setup>
-  import Skills from "@/components/experience/Skills.vue";
-  import Experience from "@/components/experience/Experience.vue";
-  import DownButton from "@/components/utils/DownButton.vue";
 
-  const handleClick = (e) => {
+<script setup>
+  import Skills from "@/components/experience/Skills.vue"
+  import Experience from "@/components/experience/Experience.vue"
+  import DownButton from "@/components/experience/DownButton.vue"
+
+  const handleClick = () => {
     scroll({
       top: document.body.scrollHeight,
       behavior: "smooth"
-    });
+    })
   }
 </script>
+<template lang="">
+  <div>
+    <Experience />
+    <a @click="handleClick">
+      <DownButton />
+    </a>
+    <Skills />
+  </div>
+</template>
 <style lang="">
     
 </style>

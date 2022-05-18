@@ -1,11 +1,12 @@
 <template>
-  <section class="container content">
-    <Animation
-      aos-animation="fade-down"
-      duration="2500"
-      delay="200"
-    >
-      <div class="row bordered">
+  <Animation
+    aos-animation="fade-down"
+    duration="2500"
+    delay="200"
+  >
+    <section class="container content">
+      <SectionHeader :text="t('about-me')" />
+      <div class="two-columns">
         <div
           class="my-photos"
           style="height: 100%"
@@ -15,20 +16,12 @@
             alt=""
           >
         </div>
-        <!-- <div class="my-photos bordered">
-          <div class="avatar one"> -->
-        <!-- <img src="https://media-exp1.licdn.com/dms/image/C4E03AQH1o64S2i-h-g/profile-displayphoto-shrink_800_800/0/1638293330730?e=1655337600&amp;v=beta&amp;t=EtQxQQchLytVcMKNbl8AvMXyQ3p_EQR6Un5qLeiyCz0" alt="" data-v-4cebd208=""> -->
-        <!-- </div>
-        </div> -->
-        
+      
         <div class="my-info text-right ">
-          <h1 class="text-primary-gradient">
-            {{ t('about-me') }}
-          </h1>
           <div class="py-5">
             <h2 v-html="t('description')" />
             <p v-html="t('paragraph')" />
-            <!-- <h4 class='text-primary'>{{t('music.title')}}</h4>
+          <!-- <h4 class='text-primary'>{{t('music.title')}}</h4>
             <p>{{t('music.paragraph')}}</p> -->
           </div>
           <div class="button-group">
@@ -57,25 +50,32 @@
           </div>
         </div>
       </div>
-    </Animation>
-  </section>
+    </section>
+  </Animation>
 </template>
 
 <script setup>
   import linksJson from "../resources/links.json"
-  import Button from '../components/Button.vue'
+  import Button from '@/components/ui/Button.vue'
   import Animation from "@/components/utils/Animation.vue"
   import { useI18n } from 'vue-i18n'
+  import SectionHeader from "../components/ui/SectionHeader.vue"
 
   const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>
   @import '@/assets/variables.scss';
-  .avatar{
-    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDE4NyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8bWFzayBpZD0ibWFzazAiIG1hc2stdHlwZT0iYWxwaGEiPgogICAgICAgIDxwYXRoIGQ9Ik0xOTAuMzEyIDM2LjQ4NzlDMjA2LjU4MiA2Mi4xMTg3IDIwMS4zMDkgMTAyLjgyNiAxODIuMzI4IDEzNC4xODZDMTYzLjM0NiAxNjUuNTQ3IAogICAgICAgIDEzMC44MDcgMTg3LjU1OSAxMDAuMjI2IDE4Ni4zNTNDNjkuNjQ1NCAxODUuMjk3IDQxLjAyMjggMTYxLjAyMyAyMS43NDAzIDEyOS4zNjJDMi40NTc3NSAKICAgICAgICA5Ny44NTExIC03LjQ4NDgxIDU5LjEwMzMgNi42NzU4MSAzNC41Mjc5QzIwLjk4NzEgMTAuMTAzMiA1OS43MDI4IC0wLjE0OTEzMiA5Ny45NjY2IAogICAgICAgIDAuMDAxNjM3MzdDMTM2LjIzIDAuMzAzMTc2IDE3NC4xOTMgMTAuODU3IDE5MC4zMTIgMzYuNDg3OVoiLz4KICAgIDwvbWFzaz4KICAgIDxnIG1hc2s9InVybCgjbWFzazApIj4KICAgICAgICA8cGF0aCBkPSJNMTkwLjMxMiAzNi40ODc5QzIwNi41ODIgNjIuMTE4NyAyMDEuMzA5IDEwMi44MjYgMTgyLjMyOCAxMzQuMTg2QzE2My4zNDYgCiAgICAgICAgMTY1LjU0NyAxMzAuODA3IDE4Ny41NTkgMTAwLjIyNiAxODYuMzUzQzY5LjY0NTQgMTg1LjI5NyA0MS4wMjI4IDE2MS4wMjMgMjEuNzQwMyAKICAgICAgICAxMjkuMzYyQzIuNDU3NzUgOTcuODUxMSAtNy40ODQ4MSA1OS4xMDMzIDYuNjc1ODEgMzQuNTI3OUMyMC45ODcxIDEwLjEwMzIgNTkuNzAyOCAKICAgICAgICAtMC4xNDkxMzIgOTcuOTY2NiAwLjAwMTYzNzM3QzEzNi4yMyAwLjMwMzE3NiAxNzQuMTkzIDEwLjg1NyAxOTAuMzEyIDM2LjQ4NzlaIi8+CiAgICAgICAgPGltYWdlIGhyZWY9IiIvPgogICAgPC9nPgo8L3N2Zz4K");
-    -webkit-mask-repeat: no-repeat;
+
+  section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
+  // .avatar{
+    // -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDE4NyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8bWFzayBpZD0ibWFzazAiIG1hc2stdHlwZT0iYWxwaGEiPgogICAgICAgIDxwYXRoIGQ9Ik0xOTAuMzEyIDM2LjQ4NzlDMjA2LjU4MiA2Mi4xMTg3IDIwMS4zMDkgMTAyLjgyNiAxODIuMzI4IDEzNC4xODZDMTYzLjM0NiAxNjUuNTQ3IAogICAgICAgIDEzMC44MDcgMTg3LjU1OSAxMDAuMjI2IDE4Ni4zNTNDNjkuNjQ1NCAxODUuMjk3IDQxLjAyMjggMTYxLjAyMyAyMS43NDAzIDEyOS4zNjJDMi40NTc3NSAKICAgICAgICA5Ny44NTExIC03LjQ4NDgxIDU5LjEwMzMgNi42NzU4MSAzNC41Mjc5QzIwLjk4NzEgMTAuMTAzMiA1OS43MDI4IC0wLjE0OTEzMiA5Ny45NjY2IAogICAgICAgIDAuMDAxNjM3MzdDMTM2LjIzIDAuMzAzMTc2IDE3NC4xOTMgMTAuODU3IDE5MC4zMTIgMzYuNDg3OVoiLz4KICAgIDwvbWFzaz4KICAgIDxnIG1hc2s9InVybCgjbWFzazApIj4KICAgICAgICA8cGF0aCBkPSJNMTkwLjMxMiAzNi40ODc5QzIwNi41ODIgNjIuMTE4NyAyMDEuMzA5IDEwMi44MjYgMTgyLjMyOCAxMzQuMTg2QzE2My4zNDYgCiAgICAgICAgMTY1LjU0NyAxMzAuODA3IDE4Ny41NTkgMTAwLjIyNiAxODYuMzUzQzY5LjY0NTQgMTg1LjI5NyA0MS4wMjI4IDE2MS4wMjMgMjEuNzQwMyAKICAgICAgICAxMjkuMzYyQzIuNDU3NzUgOTcuODUxMSAtNy40ODQ4MSA1OS4xMDMzIDYuNjc1ODEgMzQuNTI3OUMyMC45ODcxIDEwLjEwMzIgNTkuNzAyOCAKICAgICAgICAtMC4xNDkxMzIgOTcuOTY2NiAwLjAwMTYzNzM3QzEzNi4yMyAwLjMwMzE3NiAxNzQuMTkzIDEwLjg1NyAxOTAuMzEyIDM2LjQ4NzlaIi8+CiAgICAgICAgPGltYWdlIGhyZWY9IiIvPgogICAgPC9nPgo8L3N2Zz4K");
+    // -webkit-mask-repeat: no-repeat;
+  // }
 
   .button-group{
     display: block;
@@ -88,10 +88,6 @@
 
   h1{
     text-align: right;
-  }
-
-  h1, h2, h3, h4, h5{
-    margin: .5ch 0;
   }
 
   h2{
@@ -123,10 +119,9 @@
   }*/
 
   .my-photos{
-    width: 420px;
     display: flex;
     justify-content: center;
-    margin-right: 2em;
+    margin-right: 3em;
     margin-top: auto;
     margin-bottom: auto;
     img{
@@ -134,9 +129,43 @@
     }
   }
 
-  .row{
+  .two-columns{
     display: flex;
     justify-content: space-around;
+  }
+
+  @media (max-width: 960px) {
+    section{
+      flex-direction: column;
+      // min-height: auto;
+    }
+
+    h1{
+      text-align: center;
+    }
+
+    h2{
+      font-size: 2em;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .my-info{
+      width: auto;
+      // margin: 1em 0;
+    }
+
+    .my-photos{
+      margin: 1em 0;
+      img{
+        width: 160px;
+      }
+    }
+
+    .two-columns{
+      flex-direction: column;
+      justify-content: space-around;
+    } 
   }
 </style>
 
