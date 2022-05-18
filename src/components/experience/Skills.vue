@@ -46,22 +46,11 @@
 <style lang="scss" scoped>
   .grid{
     display: grid;
-    grid-auto-rows: 240px;
+    // grid-auto-rows: 12rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap:    1rem;
     margin-top: 1.5rem;
     width: 100%;
-  }
-
-  @media (max-width: 960px){
-    .grid{
-      grid-template-columns: 1fr 1fr;
-      margin-top: 1em;
-    }
-
-    .item{
-      padding: 1.5rem;
-    }
   }
 
   .item{
@@ -78,6 +67,24 @@
       font-weight: 500;
     }
   }
+
+  @media (max-width: 640px){
+    .item{
+      padding: 1em;
+    }
+  }
+
+  @media (max-width: 960px){
+    .grid{
+      grid-template-columns: 1fr 1fr;
+      margin-top: 1em;
+    }
+
+    .item{
+      padding: 1.5rem;
+    }
+  }
+
 
   h1{
     margin-bottom: .5rem;

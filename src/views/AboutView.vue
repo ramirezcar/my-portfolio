@@ -79,7 +79,7 @@
 
   .button-group{
     display: block;
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
 
   a.button + a.button{

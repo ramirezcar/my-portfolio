@@ -31,6 +31,7 @@
     // left: 50%;
     -webkit-animation: bounce-37a6547c 2s infinite 2s;
     animation: bounce-37a6547c 2s infinite 2s;
+    filter: drop-shadow(3px 5px 3px rgb(0 0 0 / 1));
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     flex-direction: column;
