@@ -18,7 +18,6 @@
   onMounted(() => {
     window.addEventListener('scroll', () => {
       disableButton.value = window.scrollY > 300
-      console.log(window.scrollY > 200)
     })
   })
 </script>

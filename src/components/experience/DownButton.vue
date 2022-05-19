@@ -64,7 +64,6 @@
   }
 
   .hide {
-    // transform: scale(0);
     transition-duration: .2s;
     opacity: 0;
   }
