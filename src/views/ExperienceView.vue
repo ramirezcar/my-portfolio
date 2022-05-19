@@ -5,8 +5,6 @@
   import DownButton from "@/components/experience/DownButton.vue"
   import { ref, onMounted } from "vue"
 
-  const SkillsSection = ref(null)
-
   const disableButton = ref(false)
   const handleClick = () => {
     scroll({
@@ -28,9 +26,7 @@
   >
     <DownButton :is-visible="disableButton" />
   </a>
-  <div>
-    <Skills ref="SkillsSection" />
-  </div>
+  <Skills />
 </template>
 <style lang="">
     

@@ -8,8 +8,6 @@
       default: true
     }
   })
-
-  console.log(props.isVisible)
 </script>
 <template lang="">
   <div :class="{hide: isVisible}">
