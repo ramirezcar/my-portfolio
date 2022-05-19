@@ -1,5 +1,18 @@
+<script setup>
+  import { useI18n } from 'vue-i18n'
+  const { t } = useI18n()
+
+  const props = defineProps({
+    isVisible: {
+      type: Boolean,
+      default: true
+    }
+  })
+
+  console.log(props.isVisible)
+</script>
 <template lang="">
-  <div>
+  <div :class="{hide: isVisible}">
     <small>{{ t('skills') }}</small>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,26 +33,20 @@
     </svg>
   </div>
 </template>
-<script setup>
-  import { useI18n } from 'vue-i18n'
-  const { t } = useI18n()
-</script>
 <style lang="scss" scoped>
   div{
     cursor: pointer;
-    opacity: 1;
-    // left: 50%;
-    -webkit-animation: bounce-37a6547c 2s infinite 2s;
-    animation: bounce-37a6547c 2s infinite 2s;
-    filter: drop-shadow(3px 5px 3px rgb(0 0 0 / 1));
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    animation: bounce 2s infinite 2s;
+    -webkit-animation: bounce 2s infinite 2s;
     bottom: 45px;
     display: flex;
-    position: absolute;
+    flex-direction: column;
+    filter: drop-shadow(3px 5px 3px rgb(0 0 0 / 1));
+    opacity: 1;
+    position: fixed;
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
     width: 100%;
     z-index: 1;
     small {
@@ -54,6 +61,12 @@
       height: 26px;
       width: 26px;
     }
+  }
+
+  .hide {
+    // transform: scale(0);
+    transition-duration: .2s;
+    opacity: 0;
   }
 
   @keyframes bounce {

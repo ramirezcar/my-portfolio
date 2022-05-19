@@ -84,7 +84,8 @@
 
     h1{
       font-size: 5em;
-      margin-bottom: 1rem;
+      font-weight: 500;
+      margin-bottom: .3rem;
     }
 
     h3{
