@@ -55,11 +55,11 @@
 </template>
 
 <script setup>
-  import linksJson from "../resources/links.json"
+  import linksJson from "@/resources/links.json"
   import Button from '@/components/ui/Button.vue'
   import Animation from "@/components/utils/Animation.vue"
+  import SectionHeader from "@/components/ui/SectionHeader.vue"
   import { useI18n } from 'vue-i18n'
-  import SectionHeader from "../components/ui/SectionHeader.vue"
 
   const { t } = useI18n()
 </script>
@@ -149,12 +149,10 @@
       margin-top: 0;
       text-align: center;
     }
-
     .my-info{
       width: auto;
       // margin: 1em 0;
     }
-
     .my-photos{
       margin: 1em 0;
       img{

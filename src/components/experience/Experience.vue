@@ -57,7 +57,6 @@
     display: flex;
     align-items: center;
   }
-
   .grid{
     display: grid;
     // grid-auto-rows: 10ch;
@@ -80,7 +79,8 @@
   }
 
   .item{
-    background: linear-gradient(102.46deg, #243430 17.01%, #243430 100.78%);
+    backdrop-filter: blur(7px);
+    background: linear-gradient(102.46deg, #24343076 53%, #2434305d 47%);
     border-radius: 3px;
     color: rgb(207, 206, 206);
     padding: 2rem;

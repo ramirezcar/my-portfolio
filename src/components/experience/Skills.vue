@@ -54,7 +54,8 @@
   }
 
   .item{
-    background: linear-gradient(102.46deg, rgba(20, 31, 28, 0.56) 17.01%, rgba(20, 31, 28, 0.56) 100.78%);
+    backdrop-filter: blur(7px);
+    background: linear-gradient(102.46deg, rgba(20, 31, 28, 0.581) 17.01%, rgba(20, 31, 28, 0.56) 100.78%);
     border-radius: 3px;
     padding: 2rem;
     color: rgb(202, 202, 202);

@@ -1,7 +1,7 @@
 
 <script setup>
-  import Skills from "@/components/experience/Skills.vue"
   import Experience from "@/components/experience/Experience.vue"
+  import Skills from "@/components/experience/Skills.vue"
   import DownButton from "@/components/experience/DownButton.vue"
   import { ref, onMounted } from "vue"
 
@@ -24,7 +24,7 @@
   <a
     @click="handleClick"
   >
-    <DownButton :is-visible="disableButton" />
+    <DownButton :hide="disableButton" />
   </a>
   <Skills />
 </template>

@@ -3,14 +3,14 @@
   const { t } = useI18n()
 
   const props = defineProps({
-    isVisible: {
+    hide: {
       type: Boolean,
       default: true
     }
   })
 </script>
 <template lang="">
-  <div :class="{hide: isVisible}">
+  <div :class="{hide: props.hide}">
     <small>{{ t('skills') }}</small>
     <svg
       xmlns="http://www.w3.org/2000/svg"
