@@ -59,7 +59,7 @@
     -webkit-text-stroke: thin;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 8rem;
+    font-size: 7rem;
     letter-spacing: -5px;
     line-height: .8;
     margin-bottom: 0;

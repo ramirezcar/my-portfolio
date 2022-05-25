@@ -2,27 +2,31 @@
   "es": [
     {
       "name": "Javascript",
-      "description": "Manejo de spreads, DRY, entre otras funciones de ES6."
+      "description": "Desestructuración de objetos, manipulación del DOM, arreglos, uso de spreads, entre otras características de Javascript y ES6."
     },
     {
       "name": "ReactJS",
-      "description": "States, construcción y manejo de Components con sus props, consumo de APIs."
+      "description": "States, construcción y manejo de componentes y props, tests con jest y consumir APIs."
     },
     {
       "name": "VueJS",
-      "description": "Refs, construcción y manejo de Components, propiedades y slots."
-    },
-    {
-      "name": "Tailwind CSS",
-      "description": "Uso en proyectos en React."
+      "description": "Refs, construcción y manejo de componentes de Vue con props, slots."
     },
     {
       "name": "Bootstrap CSS",
-      "description": "Uso en proyectos con React, Vue y Ruby on Rails (vistas)."
+      "description": "Implementación en proyectos React, Vue y Ruby on Rails (vistas)."
+    },
+    {
+      "name": "Tailwind CSS",
+      "description": "Implementación en proyectos React."
     },
     {
       "name": "Chakra UI",
-      "description": "Componentes React en proyecto de beneficios."
+      "description": "Implementación en proyecto de beneficios en React."
+    },
+    {
+      "name": "Sass",
+      "description": "Anidar clases, variables, entre otras características básicas de Sass"
     }
   ],
   "en": [

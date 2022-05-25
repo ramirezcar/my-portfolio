@@ -1,18 +1,11 @@
 <script setup>
-  import BaseLocaleSwitcher from './SwitchLanguageInput.vue'
+  // import BaseLocaleSwitcher from './SwitchLanguageInput.vue'
   import { useI18n } from 'vue-i18n'
   import { ref, onMounted } from 'vue'
   const { t } = useI18n()
 
-  const home = ref(null)
-  const skills = ref(null)
-  const experience = ref(null)
-  const about = ref(null)
-
   const navbar = ref()
   const togglerBtn = ref()
-
-  const navItems = ref([home, skills, experience, about])
 
   const scrollPosition = ref(0)
   const scrolledNav = ref(null)
@@ -123,15 +116,9 @@
         >
           {{ t('about') }}
         </router-link>
-        <!-- <router-link
-        class="nav-item contact"
-        :to="{ name: 'contact' }"
-      >
-        {{ t('contact') }}
-      </router-link> -->
-        <span class="nav-item">
-          <BaseLocaleSwitcher />
-        </span>
+        <!-- <span class="nav-item"> -->
+        <!-- <BaseLocaleSwitcher /> -->
+        <!-- </span> -->
       </div>
     </nav>
   </header>
@@ -191,7 +178,7 @@ nav {
   nav{
     width: -webkit-fill-available;
     justify-content: space-between;
-    padding: 0 2em;
+    padding: 0 3em;
     .nav-brand{
       font-size: 1.1em;
     }

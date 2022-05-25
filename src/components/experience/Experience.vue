@@ -104,6 +104,7 @@
 
   p{
     font-weight: 300;
+    text-align: justify;
   }
 </style>
 

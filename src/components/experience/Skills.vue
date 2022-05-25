@@ -1,13 +1,29 @@
 <script setup>
   import skills from "@/resources/skills"
   import { useI18n } from 'vue-i18n'
-  import { onMounted } from "vue"
+  import { ref, onMounted } from "vue"
   import AOS from "aos"
   import Animation from "@/components/utils/Animation.vue"
   import SectionHeader from "../ui/SectionHeader.vue"
+  import Modal from "../ui/Modal.vue"
 
   const { locale } = useI18n()
   const { t } = useI18n()
+
+  // const modalInfo = ref({ 
+  //   // active: false,
+  //   info: null
+  // })
+
+  // const modal = ref()
+
+  // const openModal = (item) => {
+  //   const {name, description} = item
+  //   // modalInfo.value.active = true
+  //   modalInfo.value.info = {title: name, content: description}
+  //   console.log(modal)
+  //   modal.value.classList.add('d-none')
+  // }
 
   onMounted(() => {
     AOS.init()
@@ -27,23 +43,30 @@
           {{ t('description') }}
         </p>
         <div class="grid">
-          <div
+          <a
             v-for="(skill) in skills[locale]"
             :key="skill"
             class="item focus-anim"
           >
+            <!-- @click="openModal(skill)" -->
             <h2 class="text-primary">
               {{ skill.name }}
             </h2>
             <!-- <h2 class="text-primary">{{ skill.name + t('skills[0]') }}</h2> -->
             <p>{{ skill.description }}</p>
-          </div>
+          </a>
         </div>
       </div>
     </Animation>
+    <!-- <Modal
+      :ref="modal"
+    /> -->
   </section>
 </template>
 <style lang="scss" scoped>
+  .d-none{
+    display: none;
+  }
   .grid{
     display: grid;
     // grid-auto-rows: 12rem;
@@ -57,7 +80,7 @@
     backdrop-filter: blur(7px);
     background: linear-gradient(102.46deg, rgba(20, 31, 28, 0.581) 17.01%, rgba(20, 31, 28, 0.56) 100.78%);
     border-radius: 3px;
-    padding: 2rem;
+    padding: 1.8rem;
     color: rgb(202, 202, 202);
     &:hover{
       background: linear-gradient(102.46deg, rgba(24, 24, 22, 0.56) 17.01%, rgba(27, 35, 28, 0.56) 100.78%);
@@ -66,6 +89,7 @@
     p{
       font-size: .9rem;
       font-weight: 500;
+      // text-align: justify;
     }
   }
 
@@ -104,7 +128,7 @@
   {
     "es": {
       "skills" : "Habilidades",
-      "description": "Las habilidades que he forjado en el espacio-tiempo 🧑‍💻🚀"
+      "description": "Las habilidades que he forjado en el espacio-tiempo (y para qué me han servido)🧑‍💻🚀"
     },
     "en": {
       "skills" : "Skills",
