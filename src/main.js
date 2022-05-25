@@ -12,7 +12,7 @@ function getLocale() {
   const LSLocale = localStorage.getItem("locale")
   if (LSLocale) return LSLocale
 
-  let locale = "en"
+  let locale = "es"
 
   // para que se utilice el idioma del navegador
   // const userLocale = navigator?.languages?.[0] || navigator?.language

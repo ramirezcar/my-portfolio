@@ -4,8 +4,8 @@
   const BaseFlag = defineAsyncComponent(() => import("./SwitchLanguageFlag.vue"))
   const { locale } = useI18n()
   const languages = [
-    { key: "en", label: "English" },
     { key: "es", label: "Español" },
+    { key: "en", label: "English" },
   ]
   watch(locale, () => {
     localStorage.setItem("locale", locale.value)
