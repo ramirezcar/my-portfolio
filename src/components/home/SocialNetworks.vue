@@ -55,6 +55,7 @@
   .social-networks{
     bottom: 3em;
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
     height: 100vh;
     justify-content: end;
@@ -68,13 +69,13 @@
       outline: 1px solid transparent;
       width: 32px;
     }
-      a:hover {
-        transform-style: preserve-3d;
-        transition: all 0.1s linear;
-        filter: drop-shadow(5px 5px 12px rgba(26, 101, 80, 0.545));
-        transform: rotateY(-45deg);
-        transform: scale(1.2);
-      }
+    a:hover {
+      transform-style: preserve-3d;
+      transition: all 0.1s linear;
+      filter: drop-shadow(5px 5px 12px rgba(26, 101, 80, 0.545));
+      transform: rotateY(-45deg);
+      transform: scale(1.2);
+    }
   } 
 
   @media (max-width: 720px){

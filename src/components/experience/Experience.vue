@@ -77,7 +77,6 @@
       padding: 1.5rem;
     }
   }
-
   .item{
     backdrop-filter: blur(7px);
     background: linear-gradient(102.46deg, #24343076 53%, #2434305d 47%);
