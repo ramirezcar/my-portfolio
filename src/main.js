@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
+import VueGtag from "vue-gtag"
 import 'aos/dist/aos.css'
 
 import App from './App.vue'
@@ -32,5 +33,8 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(i18n)
+app.use(VueGtag, {
+  config: { id: "320501362" }
+})
 
 app.mount('#app')
