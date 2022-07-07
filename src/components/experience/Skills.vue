@@ -25,6 +25,9 @@
   //   modal.value.classList.add('d-none')
   // }
 
+  const getImageUrl = (name) =>
+    new URL(`../../assets/img/skills/${name}.png`, import.meta.url).href
+
   onMounted(() => {
     AOS.init()
   })
@@ -55,7 +58,7 @@
             <!-- <h2 class="text-primary">{{ skill.name + t('skills[0]') }}</h2> -->
             <p>{{ skill.description }}</p>
             <img
-              :src="'src/assets/img/skills/' + skill.name.toLowerCase() + '.png'"
+              :src="getImageUrl(skill.name)"
               alt=""
             >
           </a>
