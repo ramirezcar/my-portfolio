@@ -54,6 +54,10 @@
             </h2>
             <!-- <h2 class="text-primary">{{ skill.name + t('skills[0]') }}</h2> -->
             <p>{{ skill.description }}</p>
+            <img
+              :src="'src/assets/img/skills/' + skill.name.toLowerCase() + '.png'"
+              alt=""
+            >
           </a>
         </div>
       </div>
@@ -80,8 +84,9 @@
     backdrop-filter: blur(7px);
     background: linear-gradient(102.46deg, rgba(20, 31, 28, 0.581) 17.01%, rgba(20, 31, 28, 0.56) 100.78%);
     border-radius: 3px;
-    padding: 1.8rem;
     color: rgb(202, 202, 202);
+    min-height: 144px;
+    padding: 1.8rem;
     &:hover{
       background: linear-gradient(102.46deg, rgba(24, 24, 22, 0.56) 17.01%, rgba(27, 35, 28, 0.56) 100.78%);
       color: rgb(234, 234, 234);
@@ -90,6 +95,13 @@
       font-size: .9rem;
       font-weight: 500;
       // text-align: justify;
+    }
+    img{
+      bottom: 1em;
+      position: absolute;
+      right: 1em;
+      width: 140px;
+      z-index: -2;
     }
   }
 

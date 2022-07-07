@@ -1,12 +1,15 @@
 {
-  "social":
-    {
-      "github": "https://github.com/ramirezcar",
-      "linkedin": "https://www.linkedin.com/in/carlos-ramirez-mansilla/",
-      "instagram": "https://www.instagram.com/krossbeats/"
-    },
+  "social": {
+    "github": "https://github.com/ramirezcar",
+    "linkedin": "https://www.linkedin.com/in/carlos-ramirez-mansilla/",
+    "instagram": "https://www.instagram.com/krossbeats/"
+  },
   "music": {
     "youtube": "https://www.youtube.com/channel/UCCkgPbLWP0T1B1J8wJIovvQ",
     "spotify": "https://open.spotify.com/artist/1ohl1TtyBVcqMq52FmJODK"
+  },
+  "email": {
+    "address": "ramirezmansillacar@gmail.com",
+    "gmailTemplate": "https://mail.google.com/mail/?view=cm&fs=1&to="
   }
 }

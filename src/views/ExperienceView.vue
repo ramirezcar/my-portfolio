@@ -20,13 +20,16 @@
   })
 </script>
 <template lang="">
-  <Experience />
+  <Skills />
   <a
     @click="handleClick"
   >
-    <DownButton :hide="disableButton" />
+    <DownButton
+      :hide="disableButton"
+      text="Mi experiencia"
+    />
   </a>
-  <Skills />
+  <Experience />
 </template>
 <style lang="">
     

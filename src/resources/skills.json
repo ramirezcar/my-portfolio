@@ -21,12 +21,12 @@
       "description": "Implementación en proyectos React."
     },
     {
-      "name": "Chakra UI",
-      "description": "Implementación en proyecto de beneficios en React."
-    },
-    {
       "name": "Sass",
       "description": "Anidar clases, variables, entre otras características básicas de Sass"
+    },
+    {
+      "name": "Chakra UI",
+      "description": "Implementación en proyecto de beneficios en React."
     }
   ],
   "en": [

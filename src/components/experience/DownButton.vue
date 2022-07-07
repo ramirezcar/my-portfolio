@@ -6,12 +6,17 @@
     hide: {
       type: Boolean,
       default: true
+    },
+    text: {
+      type: String,
+      default: "Click!"
     }
   })
 </script>
 <template lang="">
   <div :class="{hide: props.hide}">
-    <small>{{ t('skills') }}</small>
+    <!-- <small>{{ t('skills') }}</small> -->
+    <small>{{ props.text }}</small>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"

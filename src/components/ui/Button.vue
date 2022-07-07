@@ -34,7 +34,6 @@
       background-origin: padding-box, border-box;
       border: 2px solid transparent;
       color: var(--color-primary);
-      padding: calc(.8em - 2px) calc(4em - 2px);
       &:hover{
         background: linear-gradient(to right, lighten(rgba(42, 59, 55, 0.918), 5), lighten(rgba(42, 59, 55, 0.918), 5)),
         linear-gradient(270.05deg, lighten(#21B08E, 5%) 4.92%, lighten(#3B9FA6, 5%) 96.41%);
@@ -53,7 +52,7 @@
     font-family: 'Viga', sans-serif;
     font-size: 1rem;
     font-weight: 400;
-    padding: .8em 4em;
+    padding: .8em 3em;
     // text-transform:;
     svg{
       vertical-align: middle; 
