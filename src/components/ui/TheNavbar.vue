@@ -83,7 +83,7 @@
       <div class="nav-brand">
         <div class="brand">
           <img
-            src="src/assets/img/avatar.jpg"
+            src="https://media-exp1.licdn.com/dms/image/C4E03AQH1o64S2i-h-g/profile-displayphoto-shrink_800_800/0/1638293330730?e=1662595200&v=beta&t=0PGmWhuHUNZgVU1ulj3im00DsT4XH_VWqvlIH_Zfg9s"
             alt=""
           >
           <router-link
