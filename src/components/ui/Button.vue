@@ -23,10 +23,10 @@
       color: aliceblue;
       &:hover{
         background-image: linear-gradient(270.05deg, lighten(#21B08E, 5%) 4.92%, lighten(#3B9FA6, 5%) 96.41%);
+        box-shadow: 1px 0 15px #21b08f63;
       }
     }
     &.secondary{
-      // background: rgba(49, 90, 80, 0.34);
       background: 
         linear-gradient(to right, rgba(42, 59, 55, 0.918), rgba(42, 59, 55, 0.918)),
         linear-gradient(270.05deg, lighten(#21B08E, 5%) 4.92%, lighten(#3B9FA6, 5%) 96.41%);
@@ -40,11 +40,9 @@
         background-clip: padding-box, border-box;
         background-origin: padding-box, border-box;
         border: 2px solid transparent;
-        // color: var(--color-white);
       }
     }
     align-items: center;
-    // letter-spacing: .3px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -53,7 +51,6 @@
     font-size: 1rem;
     font-weight: 400;
     padding: .8em 3em;
-    // text-transform:;
     svg{
       vertical-align: middle; 
       margin-right:8px;
