@@ -2,7 +2,8 @@
   "es": [
     {
       "name": "Javascript",
-      "description": "Desestructuración de objetos, manipulación del DOM, arreglos, uso de spreads, entre otras características de Javascript y ES6."
+      "description": "Desestructuración de objetos, manipulación del DOM, arreglos, uso de spreads, entre otras características de Javascript y ES6.",
+      "url": "/assets/img/skills/javascript.png"
     },
     {
       "name": "ReactJS",
@@ -51,7 +52,7 @@
       "description": "Use in projects with React, Vue and Ruby on Rails (views)."
     },
     {
-      "name": "UI Chakra",
+      "name": "Chakra UI",
       "description": "React components in benefits project."
     }
   ]

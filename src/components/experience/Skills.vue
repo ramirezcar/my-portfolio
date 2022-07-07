@@ -1,11 +1,11 @@
 <script setup>
   import skills from "@/resources/skills"
   import { useI18n } from 'vue-i18n'
-  import { ref, onMounted } from "vue"
+  import { onMounted } from "vue"
   import AOS from "aos"
   import Animation from "@/components/utils/Animation.vue"
   import SectionHeader from "../ui/SectionHeader.vue"
-  import Modal from "../ui/Modal.vue"
+  import bootstrapImg from "@/assets/img/skills/bootstrap.png"
 
   const { locale } = useI18n()
   const { t } = useI18n()
@@ -26,7 +26,7 @@
   // }
 
   const getImageUrl = (name) =>
-    new URL(`../../assets/img/skills/${name}.png`, import.meta.url).href
+    new URL(`../../../public/img/skills/${name}.png`, import.meta.url).href
 
   onMounted(() => {
     AOS.init()
@@ -57,6 +57,10 @@
             </h2>
             <!-- <h2 class="text-primary">{{ skill.name + t('skills[0]') }}</h2> -->
             <p>{{ skill.description }}</p>
+            <!-- <img
+              :src="getImageUrl(skill.name.toLowerCase())"
+              alt=""
+            > -->
             <img
               :src="getImageUrl(skill.name)"
               alt=""

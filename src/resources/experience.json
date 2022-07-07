@@ -1,6 +1,12 @@
 {
   "es": [
     {
+      "title": "Frontend dev",
+      "company": "NTT Data",
+      "period": "Junio 2022 - Hoy",
+      "description": "Nuevo enfoque desarrollo Frontend con ReactJS, Redux, Componentes MUI y consumo de GraphQL para cliente del sector de salud."
+    },
+    {
       "title": "Fullstack dev",
       "company": "NTT Data",
       "period": "Abril 2022 - Hoy",
