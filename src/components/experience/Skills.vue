@@ -5,7 +5,7 @@
   import AOS from "aos"
   import Animation from "@/components/utils/Animation.vue"
   import SectionHeader from "../ui/SectionHeader.vue"
-  import bootstrapImg from "@/assets/img/skills/bootstrap.png"
+  // import bootstrapImg from "@/assets/img/skills/bootstrap.png"
 
   const { locale } = useI18n()
   const { t } = useI18n()
@@ -26,7 +26,7 @@
   // }
 
   const getImageUrl = (name) =>
-    new URL(`../../../public/img/skills/${name}.png`, import.meta.url).href
+    new URL(`../../../img/skills/${name}.png`, import.meta.url).href
 
   onMounted(() => {
     AOS.init()
@@ -62,7 +62,7 @@
               alt=""
             > -->
             <img
-              :src="getImageUrl(skill.name)"
+              :src="`../../../img/skills/${skill.name}.png`"
               alt=""
             >
           </a>
