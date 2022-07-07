@@ -1,5 +1,5 @@
 <script setup>
-  // import BaseLocaleSwitcher from './SwitchLanguageInput.vue'
+  import BaseLocaleSwitcher from './SwitchLanguageInput.vue'
   import { useI18n } from 'vue-i18n'
   import { ref, onMounted } from 'vue'
   const { t } = useI18n()
@@ -116,9 +116,9 @@
         >
           {{ t('about') }}
         </router-link>
-        <!-- <span class="nav-item"> -->
-        <!-- <BaseLocaleSwitcher /> -->
-        <!-- </span> -->
+        <span class="nav-item">
+          <BaseLocaleSwitcher />
+        </span>
       </div>
     </nav>
   </header>
