@@ -25,9 +25,6 @@
   //   modal.value.classList.add('d-none')
   // }
 
-  const getImageUrl = (name) =>
-    new URL(`../../../img/skills/${name}.png`, import.meta.url).href
-
   onMounted(() => {
     AOS.init()
   })
@@ -113,12 +110,17 @@
   }
 
   @media (max-width: 640px){
+    .grid{
+      grid-template-columns: 1fr;
+      grid-gap: .75em;
+    }
+
     .item{
       padding: 1em;
     }
   }
 
-  @media (max-width: 960px){
+  @media (min-width: 640px) and (max-width: 960px){
     .grid{
       grid-template-columns: 1fr 1fr;
       margin-top: 1em;

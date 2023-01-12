@@ -1,5 +1,5 @@
 <script setup>
-  import BaseLocaleSwitcher from './SwitchLanguageInput.vue'
+  // import BaseLocaleSwitcher from './SwitchLanguageInput.vue'
   import { useI18n } from 'vue-i18n'
   import { ref, onMounted } from 'vue'
   const { t } = useI18n()
@@ -12,7 +12,7 @@
 
   const handleScroll = () => {
     scrollPosition.value = window.scrollY
-    scrolledNav.value = scrollPosition.value > 150
+    scrolledNav.value = scrollPosition.value > 100
   }
 
   const CLOSE_ICON = `<svg
@@ -83,7 +83,7 @@
       <div class="nav-brand">
         <div class="brand">
           <img
-            src="https://media-exp1.licdn.com/dms/image/C4E03AQH1o64S2i-h-g/profile-displayphoto-shrink_800_800/0/1638293330730?e=1662595200&v=beta&t=0PGmWhuHUNZgVU1ulj3im00DsT4XH_VWqvlIH_Zfg9s"
+            src="/img/avatar.png"
             alt=""
           >
           <router-link
@@ -110,15 +110,22 @@
           {{ t('experience') }}
         </router-link>
         <router-link
+          class="nav-item projects"
+          :to="{ name: 'projects' }"
+          @click="toggle"
+        >
+          {{ t('projects') }}
+        </router-link>
+        <router-link
           class="nav-item about"
           :to="{ name: 'about' }"
           @click="toggle"
         >
           {{ t('about') }}
         </router-link>
-        <span class="nav-item">
+        <!-- <div class="nav-item">
           <BaseLocaleSwitcher />
-        </span>
+        </div> -->
       </div>
     </nav>
   </header>
@@ -129,11 +136,28 @@ $duration: .4s;
 
 @media (min-width: 640px){
   header{
-    padding-top: .5em;
+    padding-top: .75em;
     position: absolute;
   }
+  
+  nav{
+    width: -webkit-fill-available;
+    justify-content: space-between;
+    margin: 0 .75em;
+    padding: 0 3em;
+    .nav-brand{
+      font-size: 1.1em;
+    }
+    .nav-item,
+    .nav-brand a {
+      margin: 0 1rem;
+      margin-bottom: -3px;
+      padding: 6px 6px;
+      cursor: pointer;
+      position: relative;
+    }
+  }
 }
-
 
 nav {
   display: flex;
@@ -171,82 +195,6 @@ nav {
     height: 32px;
     width: 32px;
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.8));
-  }
-}
-
-@media (min-width: 640px) {
-  nav{
-    width: -webkit-fill-available;
-    justify-content: space-between;
-    padding: 0 3em;
-    .nav-brand{
-      font-size: 1.1em;
-    }
-    .nav-item,
-    .nav-brand a {
-      margin: 0 1rem;
-      margin-bottom: -3px;
-      padding: 6px 6px;
-      cursor: pointer;
-      position: relative;
-    }
-  }
-}
-
-@media (min-width: 640px) and (max-width: 860px)
-{
-  nav{
-    font-size: .8em;
-    .nav-item{
-      margin: 0 .5rem;
-    }
-  }
-}
-
-@media (max-width: 640px) {
-  nav{
-    background-color: rgba(29, 29, 29, 0.983);
-    box-shadow: 0 -2px 20px 20px rgba(20, 20, 20, 0.449);
-    font-size: 2.7ch;
-    flex-direction: column;
-    height: 100%;
-    opacity: 0;
-    padding: 1em;
-    transition: all $duration ease-in-out;
-    transform: translateX(-100%);
-    width: 80vw;
-    .nav-brand{
-      justify-content: space-between;
-      font-size: .7em;
-      margin-bottom: 1rem;
-      .brand img{
-        width: 32px;
-        height: 32px;
-      }
-    }
-    .nav-links{
-      border-top: 1px solid #393939;
-      text-align: center;
-      flex-direction: column;
-      .nav-item{
-        padding: .6em 0;
-      }
-      a{
-        width: 100%;
-      }
-    }
-  }
-  .right{
-    right: 7vw !important;
-    transition:1s;
-  }
-  .active{
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  header{
-    width: 100%;
   }
 }
 
@@ -302,6 +250,64 @@ a:visited {
   color: var(--color-text);
   transition: .5s;
 }
+
+@media (max-width: 640px) {
+  nav{
+    background-color: rgba(29, 29, 29, 0.983);
+    box-shadow: 0 -2px 20px 20px rgba(20, 20, 20, 0.449);
+    font-size: 2.7ch;
+    flex-direction: column;
+    height: 100%;
+    opacity: 0;
+    padding: 1em;
+    transition: all $duration ease-in-out;
+    transform: translateX(-100%);
+    width: 80vw;
+    .nav-brand{
+      justify-content: space-between;
+      font-size: .7em;
+      margin-bottom: 1rem;
+      .brand img{
+        width: 32px;
+        height: 32px;
+      }
+    }
+    .nav-links{
+      border-top: 1px solid #393939;
+      text-align: center;
+      flex-direction: column;
+      .nav-item{
+        padding: .6em 0;
+      }
+      a{
+        width: 100%;
+      }
+    }
+  }
+  .right{
+    right: 7vw !important;
+    transition:1s;
+  }
+  .active{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  header{
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 860px)
+{
+  nav{
+    font-size: .8em;
+    .nav-item{
+      margin: 0 .5rem;
+    }
+  }
+}
+
 </style>
 
 <i18n>

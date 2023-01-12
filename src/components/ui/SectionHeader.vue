@@ -4,7 +4,7 @@
   })
 </script>
 <template lang="">
-  <h1 class="text-primary-gradient pulse-bg">
+  <h1 class="text-primary-gradient pulse-bg no-select">
     {{ props.text }}
   </h1>
 </template>

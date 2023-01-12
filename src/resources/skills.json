@@ -2,32 +2,28 @@
   "es": [
     {
       "name": "Javascript",
-      "description": "Desestructuración de objetos, manipulación del DOM, arreglos, uso de spreads, entre otras características de Javascript y ES6.",
+      "description": "Manipulación del DOM, desestructuración de objetos, arrays, spreads, entre otras características ES6.",
       "url": "/assets/img/skills/javascript.png"
     },
     {
       "name": "ReactJS",
-      "description": "States, construcción y manejo de componentes y props, tests con jest y consumir APIs."
+      "description": "Construcción y manejo de componentes, states, ciclos, props. Tests con JEST e integraciones con API REST y GraphQl."
     },
     {
       "name": "VueJS",
-      "description": "Refs, construcción y manejo de componentes de Vue con props, slots."
+      "description": "Construcción y manejo de componentes, states con Pinia, Vue Router 4."
     },
     {
       "name": "Bootstrap CSS",
-      "description": "Implementación en proyectos React, Vue y Ruby on Rails (vistas)."
+      "description": "Implementación en proyectos React, Vue y Ruby on Rails sintax."
     },
     {
       "name": "Tailwind CSS",
-      "description": "Implementación en proyectos React."
+      "description": "Implementación en proyecto React."
     },
     {
       "name": "Sass",
       "description": "Anidar clases, variables, entre otras características básicas de Sass"
-    },
-    {
-      "name": "Chakra UI",
-      "description": "Implementación en proyecto de beneficios en React."
     }
   ],
   "en": [

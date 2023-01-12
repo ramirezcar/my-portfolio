@@ -1,0 +1,48 @@
+{
+  "es": [
+    {
+      "title": "Beatter",
+      "type": "Personal",
+      "period": "Enero 2022 - Hoy",
+      "description": "Una plataforma social/ventas enfocada en los productores musicales, para publicar, vender instrumentales, compartir fotos e interactuar; para mi proyecto universitario. Se pensó y se hizo!. \n El próximo paso es disponibilizarlo en producción :)",
+      "url": null,
+      "technologies": [
+        "vuejs",
+        "pinia",
+        "bootstrap css",
+        "strapi"
+      ],
+      "images": [
+        "/img/projects/beatter.png"
+      ]
+    },
+    {
+      "title": "Rick&Morty Wiki",
+      "type": "Personal",
+      "period": "Mayo 2022 - Hoy",
+      "description": "Una divertida experiencia con la API de rick & morty, en esta web puedes buscar información oficial de la serie.",
+      "url": "https://rickymorty-wiki.netlify.app/",
+      "technologies": [
+        "reactjs",
+        "bootstrap css"
+      ],
+      "images": [
+        "/img/projects/rick&morty.png"
+      ]
+    },
+    {
+      "title": "Giphyer",
+      "type": "Personal",
+      "period": "Noviembre 2021",
+      "description": "Un buscador de todo tipo de Gifs. A días de hoy sigue siendo muy útil. Esta vez hice uso de la API oficial de Giphy.",
+      "url": "https://giphyer.netlify.app/",
+      "technologies": [
+        "reactjs",
+        "bootstrap css"
+      ],
+      "images": [
+        "/img/projects/giphyer.png"
+      ]
+    }
+  ]
+}
